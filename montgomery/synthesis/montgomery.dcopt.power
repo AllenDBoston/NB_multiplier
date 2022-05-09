@@ -1,0 +1,58 @@
+Loading db file '/uusoc/facility/cad_common/Artisan/GF/cmos65g/aci/sc-adv12/synopsys/scadv12_cmos10sf_rvt_tt_1p0v_25c.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: There is no defined clock in the design. (PWR-80)
+Warning: Design has unannotated primary inputs. (PWR-414)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : montgomery
+Version: M-2016.12-SP3
+Date   : Sun May  8 17:05:34 2022
+****************************************
+
+
+Library(s) Used:
+
+    scadv12_cmos10sf_rvt_tt_1p0v_25c (File: /uusoc/facility/cad_common/Artisan/GF/cmos65g/aci/sc-adv12/synopsys/scadv12_cmos10sf_rvt_tt_1p0v_25c.db)
+
+
+Operating Conditions: tt_1p0v_25c   Library: scadv12_cmos10sf_rvt_tt_1p0v_25c
+Wire Load Model Mode: segmented
+
+Design        Wire Load Model            Library
+------------------------------------------------
+montgomery             cmos10sf_wl5      scadv12_cmos10sf_rvt_tt_1p0v_25c
+
+
+Global Operating Voltage = 1    
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1mW
+
+
+  Cell Internal Power  =  28.8595 uW   (34%)
+  Net Switching Power  =  55.7836 uW   (66%)
+                         ---------
+Total Dynamic Power    =  84.6432 uW  (100%)
+
+Cell Leakage Power     = 598.4825 nW
+
+Information: report_power power group summary does not include estimated clock tree power. (PWR-789)
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register           0.0000            0.0000            0.0000            0.0000  (   0.00%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational  2.8860e-02        5.5784e-02        5.9848e-04        8.5242e-02  ( 100.00%)
+--------------------------------------------------------------------------------------------------
+Total          2.8860e-02 mW     5.5784e-02 mW     5.9848e-04 mW     8.5242e-02 mW
+1

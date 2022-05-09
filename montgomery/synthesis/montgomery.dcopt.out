@@ -1,0 +1,675 @@
+Using setup-synopsys from S17
+Assuming your OS is amd64
+You are now set up to run the synopsys tools.
+
+Working directory is /research/ece/lnis/USERS/boston/CryptoHW/NB_multiplier/montgomery/synthesis
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+               Version M-2016.12-SP3 for linux64 - Apr 18, 2017 
+
+                    Copyright (c) 1988 - 2017 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+### This is the script for optimizing the verilog
+#----------------------------------------------------------------------#
+#                        DESIGN DEFINITION                             #
+#----------------------------------------------------------------------#
+set design_name  montgomery
+montgomery
+set design_dir   "."
+.
+### EDIT $design_name.cstr.tcl for timing and other constraints!
+############## technology files #########################
+### can include multiple .db files in string.
+### Utah
+#set lib_name  "UofU_Digital_v1_2"
+#set lib_db    "UofU_Digital_v1_2.db"
+#set lib_dir   "/uusoc/facility/cad_common/local/Cadence/lib/UofU_Digital_v1_2/"
+### set lib_pdb   physical db defs
+## UWashington 130nm:
+#set lib_name  "static184cg_1.5V_25C"
+#set lib_db    "static184cg_1.5V_25C.db"
+#set lib_dir   "/uusoc/facility/cad_common/local/Cadence/lib/cg_lib13_v096/"
+##set lib_pdb   physical db defs
+## Artisan 130nm:
+#set lib_name  "typical"
+#set lib_db    "typical.db"
+#set lib_dir   "/uusoc/facility/cad_common/IBM/Artisan/8RF-1.2v/aci/sc-x/synopsys/"
+#set lib_pdb   "ibm13svt_8lm_2thick_3rf.pdb"
+## Artisan 65nm:
+set lib_name  "scadv12_cmos10sf_rvt_tt_1p0v_25c"
+scadv12_cmos10sf_rvt_tt_1p0v_25c
+set lib_db    "scadv12_cmos10sf_rvt_tt_1p0v_25c.db"
+scadv12_cmos10sf_rvt_tt_1p0v_25c.db
+set lib_dir   "/uusoc/facility/cad_common/Artisan/GF/cmos65g/aci/sc-adv12/synopsys"
+/uusoc/facility/cad_common/Artisan/GF/cmos65g/aci/sc-adv12/synopsys
+##set lib_pdb
+############# custom library files #############################
+#set custom_cells ../lib/custom-cells.v
+#set custom_seq   ../lib/custom-sequentials.v
+################################################
+#            DC configuration variables
+# Milkyway related variables
+set mw_design_library $design_name.mw
+montgomery.mw
+#set mw_power_net   VDD
+#set mw_ground_net  VSS
+set mw_logic1_net  VDD
+VDD
+set mw_logic0_net  VSS
+VSS
+set mw_power_port  VDD
+VDD
+set mw_ground_port VSS
+VSS
+##set mw_tech_file /.../milkyway/tcbn90ghphvt_130a/techfiles/tsmcn90_7lm_6x6.tf
+##set mw_reference_library [list /../milkyway/tcbn90ghphvt_130a /../milkyway/tcbn90ghplvt_130a]
+# db and cache configuration
+set cache_read  {}
+set cache_write {}
+set allow_newer_db_files       true
+true
+set write_compressed_db_files  true
+true
+set sh_source_uses_search_path true
+true
+#################################################
+# Define checkpoint function
+proc checkpoint {name} {
+  echo "CPU-$name: [cputime -self -child]"
+  echo "MEM-$name: [mem]"
+  echo "CLK-$name: [clock seconds]"
+}
+#----------------------------------------------------------------------#
+#                             DESIGN SETUP                             #
+#----------------------------------------------------------------------#
+set search_path [concat  . $design_dir $lib_dir $search_path]
+. . /uusoc/facility/cad_common/Artisan/GF/cmos65g/aci/sc-adv12/synopsys . /uusoc/facility/cad_common/Synopsys/SYN-S17/libraries/syn /uusoc/facility/cad_common/Synopsys/SYN-S17/minpower/syn /uusoc/facility/cad_common/Synopsys/SYN-S17/dw/syn_ver /uusoc/facility/cad_common/Synopsys/SYN-S17/dw/sim_ver
+set search_path "$search_path ${synopsys_root}/libraries/syn"
+. . /uusoc/facility/cad_common/Artisan/GF/cmos65g/aci/sc-adv12/synopsys . /uusoc/facility/cad_common/Synopsys/SYN-S17/libraries/syn /uusoc/facility/cad_common/Synopsys/SYN-S17/minpower/syn /uusoc/facility/cad_common/Synopsys/SYN-S17/dw/syn_ver /uusoc/facility/cad_common/Synopsys/SYN-S17/dw/sim_ver /uusoc/facility/cad_common/Synopsys/SYN-S17/libraries/syn
+set search_path "$search_path ${synopsys_root}/dw/sim_ver"
+. . /uusoc/facility/cad_common/Artisan/GF/cmos65g/aci/sc-adv12/synopsys . /uusoc/facility/cad_common/Synopsys/SYN-S17/libraries/syn /uusoc/facility/cad_common/Synopsys/SYN-S17/minpower/syn /uusoc/facility/cad_common/Synopsys/SYN-S17/dw/syn_ver /uusoc/facility/cad_common/Synopsys/SYN-S17/dw/sim_ver /uusoc/facility/cad_common/Synopsys/SYN-S17/libraries/syn /uusoc/facility/cad_common/Synopsys/SYN-S17/dw/sim_ver
+################################################################
+# DC library definitions
+set local_link_library [list ]
+set target_library $lib_db
+scadv12_cmos10sf_rvt_tt_1p0v_25c.db
+set synthetic_library "dw_foundation.sldb"
+dw_foundation.sldb
+set link_library [concat * $lib_db $synthetic_library]
+* scadv12_cmos10sf_rvt_tt_1p0v_25c.db dw_foundation.sldb
+if [info exists lib_pdb] {
+    set physical_library $lib_pdb
+} else {
+    set physical_library [list ]
+}
+set symbol_library [list ]
+################################################################
+if [info exists dc_shell_mode] {
+    set suppress_errors "$suppress_errors TRANS-1 TIM-111 TIM-164 OPT-109 UID-101 TIM-134 DDB-74"
+}
+ TRANS-1 TIM-111 TIM-164 OPT-109 UID-101 TIM-134 DDB-74
+checkpoint setup
+CPU-setup: 1
+MEM-setup: 49912
+CLK-setup: 1652051128
+#----------------------------------------------------------------------#
+#                        READ DB FROM RTLOPT                           #
+#----------------------------------------------------------------------#
+read_file -format ddc $design_name.rtlopt.ddc
+Loading db file '/uusoc/facility/cad_common/Artisan/GF/cmos65g/aci/sc-adv12/synopsys/scadv12_cmos10sf_rvt_tt_1p0v_25c.db'
+Loading db file '/uusoc/facility/cad_common/Synopsys/SYN-S17/libraries/syn/dw_foundation.sldb'
+Loading db file '/uusoc/facility/cad_common/Synopsys/SYN-S17/libraries/syn/gtech.db'
+Loading db file '/uusoc/facility/cad_common/Synopsys/SYN-S17/libraries/syn/standard.sldb'
+  Loading link library 'scadv12_cmos10sf_rvt_tt_1p0v_25c'
+  Loading link library 'gtech'
+Reading ddc file '/research/ece/lnis/USERS/boston/CryptoHW/NB_multiplier/montgomery/synthesis/montgomery.rtlopt.ddc'.
+Loaded 4 designs.
+Current design is 'montgomery'.
+montgomery mult_5bit_mod2 mult_6bit_mod2_q2 mult_6bit_mod2_g2
+checkpoint read
+CPU-read: 2
+MEM-read: 218288
+CLK-read: 1652051129
+current_design $design_name
+Current design is 'montgomery'.
+{montgomery}
+link
+
+  Linking design 'montgomery'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (4 designs)               /research/ece/lnis/USERS/boston/CryptoHW/NB_multiplier/montgomery/synthesis/montgomery.rtlopt.ddc, etc
+  scadv12_cmos10sf_rvt_tt_1p0v_25c (library) /uusoc/facility/cad_common/Artisan/GF/cmos65g/aci/sc-adv12/synopsys/scadv12_cmos10sf_rvt_tt_1p0v_25c.db
+  dw_foundation.sldb (library) /uusoc/facility/cad_common/Synopsys/SYN-S17/libraries/syn/dw_foundation.sldb
+
+1
+checkpoint link
+CPU-link: 2
+MEM-link: 218288
+CLK-link: 1652051129
+#----------------------------------------------------------------------#
+#                           READ CONSTRAINTS                           #
+#----------------------------------------------------------------------#
+current_design $design_name
+Current design is 'montgomery'.
+{montgomery}
+#set formality_link_debug true
+set svf_file_records_change_names_changes true
+true
+set enable_dw_datapath_in_svf true
+true
+#set enable_ununiquify_in_svf true
+set hlo_write_svf_info true
+true
+set synlib_fmlink_output_verilog true
+true
+set enable_constant_propagation_in_svf true
+true
+set_svf $design_name.dcopt.svf
+1
+set_vsdc $design_name.dcopt.vsdc
+1
+current_design  $design_name
+Current design is 'montgomery'.
+{montgomery}
+source $design_name.cstr.tcl
+Current design is 'montgomery'.
+Using operating conditions 'tt_1p0v_25c' found in library 'scadv12_cmos10sf_rvt_tt_1p0v_25c'.
+###source $design_name.tcl
+checkpoint cstr
+CPU-cstr: 2
+MEM-cstr: 218288
+CLK-cstr: 1652051129
+#----------------------------------------------------------------------#
+#                                COMPILE                               #
+#----------------------------------------------------------------------#
+#current_design $design_name
+#set ungroup_record_report_info true
+list_designs -show_file
+
+/research/ece/lnis/USERS/boston/CryptoHW/NB_multiplier/montgomery/synthesis/montgomery.rtlopt.ddc
+montgomery (*)          mult_6bit_mod2_g2
+mult_5bit_mod2          mult_6bit_mod2_q2
+1
+current_design $design_name
+Current design is 'montgomery'.
+{montgomery}
+echo "Start: [cputime -self -child]"
+Start: 2
+## Do retiming?:x
+set_optimize_registers true
+1
+check_design
+ 
+****************************************
+check_design summary:
+Version:     M-2016.12-SP3
+Date:        Sun May  8 17:05:29 2022
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                      9
+    Unconnected ports (LINT-28)                                     1
+    Feedthrough (LINT-29)                                           5
+    Shorted outputs (LINT-31)                                       1
+    Constant outputs (LINT-52)                                      2
+--------------------------------------------------------------------------------
+
+Warning: In design 'mult_6bit_mod2_g2', port 'B[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'mult_6bit_mod2_q2', input port 'B[5]' is connected directly to output port 'Z[5]'. (LINT-29)
+Warning: In design 'mult_6bit_mod2_q2', input port 'B[4]' is connected directly to output port 'Z[4]'. (LINT-29)
+Warning: In design 'mult_6bit_mod2_q2', input port 'B[3]' is connected directly to output port 'Z[3]'. (LINT-29)
+Warning: In design 'mult_6bit_mod2_g2', input port 'B[1]' is connected directly to output port 'Z[1]'. (LINT-29)
+Warning: In design 'mult_6bit_mod2_g2', input port 'B[0]' is connected directly to output port 'Z[0]'. (LINT-29)
+Warning: In design 'mult_5bit_mod2', output port 'Z[10]' is connected directly to output port 'Z[9]'. (LINT-31)
+Warning: In design 'mult_5bit_mod2', output port 'Z[10]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'mult_5bit_mod2', output port 'Z[9]' is connected directly to 'logic 0'. (LINT-52)
+1
+## clock gate design
+insert_clock_gating
+Warning: Clock gating insertion with insert_clock_gating is deprecated and will be removed in a future release; instead use the compile -gate_clock command. (PWR-729)
+Information: Performing clock-gating on design montgomery
+Information: Performing clock-gating on design mult_6bit_mod2_g2
+Information: Performing clock-gating on design mult_6bit_mod2_q2
+Information: Performing clock-gating on design mult_5bit_mod2
+1
+## compile design
+compile -area_effort high -map_effort high
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | M-2016.12-DWBB_201612.3 |     *     |
+| Licensed DW Building Blocks        | M-2016.12-DWBB_201612.3 |           |
+============================================================================
+
+Information: Retiming is enabled. SVF file must be used for formal verification. (OPT-1210)
+
+Information: There are 9 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'mult_6bit_mod2_g2'
+  Processing 'mult_6bit_mod2_q2'
+  Processing 'mult_5bit_mod2'
+  Processing 'montgomery'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: Design 'montgomery' has no optimization constraints set. (OPT-108)
+
+  Beginning Mapping Optimizations  (High effort)
+  -------------------------------
+  Structuring 'mult_6bit_mod2_g2'
+  Mapping 'mult_6bit_mod2_g2'
+  Structuring 'mult_6bit_mod2_q2'
+  Mapping 'mult_6bit_mod2_q2'
+  Structuring 'mult_5bit_mod2'
+  Mapping 'mult_5bit_mod2'
+  Structuring 'montgomery'
+  Mapping 'montgomery'
+Information: Checkpoint guidance is generated in the .svf file. (INFO-122)
+Information: Updating design information... (UID-85)
+  Retiming montgomery (top)
+Warning: No movable flip-flops in design. Nothing to retime. (RTDC-10)
+Information: Checking pipeline property of design montgomery. (RTDC-137)
+Information: Cell design montgomery has no registers. Pipeline detection will not be done. (RTDC-141)
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:01     159.6      0.00       0.0       0.0                          
+    0:00:01     159.6      0.00       0.0       0.0                          
+    0:00:01     159.6      0.00       0.0       0.0                          
+    0:00:01     159.6      0.00       0.0       0.0                          
+    0:00:01     159.6      0.00       0.0       0.0                          
+    0:00:01     159.6      0.00       0.0       0.0                          
+    0:00:01     159.6      0.00       0.0       0.0                          
+    0:00:01     159.6      0.00       0.0       0.0                          
+    0:00:01     159.6      0.00       0.0       0.0                          
+    0:00:01     159.6      0.00       0.0       0.0                          
+    0:00:01     159.6      0.00       0.0       0.0                          
+    0:00:01     159.6      0.00       0.0       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:01     159.6      0.00       0.0       0.0                          
+    0:00:01     159.6      0.00       0.0       0.0                          
+    0:00:02     159.6      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:02     159.6      0.00       0.0       0.0                          
+    0:00:02     159.6      0.00       0.0       0.0                          
+    0:00:02     159.6      0.00       0.0       0.0                          
+    0:00:02     159.6      0.00       0.0       0.0                          
+    0:00:02     159.6      0.00       0.0       0.0                          
+    0:00:02     159.6      0.00       0.0       0.0                          
+    0:00:02     159.6      0.00       0.0       0.0                          
+    0:00:02     159.6      0.00       0.0       0.0                          
+    0:00:02     159.6      0.00       0.0       0.0                          
+    0:00:02     159.6      0.00       0.0       0.0                          
+    0:00:02     159.6      0.00       0.0       0.0                          
+Loading db file '/uusoc/facility/cad_common/Artisan/GF/cmos65g/aci/sc-adv12/synopsys/scadv12_cmos10sf_rvt_tt_1p0v_25c.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+1
+#compile -area_effort high -power_effort high
+#compile -area_effort high -power_effort high -map_effort medium -ungroup_all
+#compile -area_effort high -power_effort high -map_effort high -ungroup_all -verify_effort high
+## guarantee naming consistency
+source namingrules.dc
+
+Design          Type    Object                  New Name
+--------------------------------------------------------------------------------
+Warning: In the design mult_5bit_mod2, net '*Logic0*' is connecting multiple ports. (UCN-1)
+Warning: The specified replacement character (_) is conflicting with the specified allowed or restricted character.   (UCN-4)
+mult_5bit_mod2  net     *Logic0*                n_Logic0_
+Warning: In the design mult_6bit_mod2_q2, net 'B[5]' is connecting multiple ports. (UCN-1)
+Warning: In the design mult_6bit_mod2_q2, net 'B[4]' is connecting multiple ports. (UCN-1)
+Warning: In the design mult_6bit_mod2_q2, net 'B[3]' is connecting multiple ports. (UCN-1)
+mult_6bit_mod2_q2 net   B[5]                    B_5_
+mult_6bit_mod2_q2 net   B[4]                    B_4_
+mult_6bit_mod2_q2 net   B[3]                    B_3_
+mult_6bit_mod2_q2 net   Z[2]                    Z_2_
+mult_6bit_mod2_q2 net   Z[1]                    Z_1_
+mult_6bit_mod2_q2 net   Z[0]                    Z_0_
+Warning: In the design mult_6bit_mod2_g2, net 'B[1]' is connecting multiple ports. (UCN-1)
+Warning: In the design mult_6bit_mod2_g2, net 'B[0]' is connecting multiple ports. (UCN-1)
+mult_6bit_mod2_g2 net   Z[4]                    Z_4_
+mult_6bit_mod2_g2 net   Z[3]                    Z_3_
+mult_6bit_mod2_g2 net   Z[2]                    Z_2_
+mult_6bit_mod2_g2 net   B[1]                    B_1_
+mult_6bit_mod2_g2 net   B[0]                    B_0_
+
+Design          Type    Object                  New Name
+--------------------------------------------------------------------------------
+1
+echo "End: [cputime -self -child]"
+End: 5
+checkpoint compile
+CPU-compile: 5
+MEM-compile: 218288
+CLK-compile: 1652051132
+check_design
+ 
+****************************************
+check_design summary:
+Version:     M-2016.12-SP3
+Date:        Sun May  8 17:05:32 2022
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                      9
+    Unconnected ports (LINT-28)                                     1
+    Feedthrough (LINT-29)                                           5
+    Shorted outputs (LINT-31)                                       1
+    Constant outputs (LINT-52)                                      2
+
+Cells                                                               3
+    Connected to power or ground (LINT-32)                          2
+    Nets connected to multiple pins on same cell (LINT-33)          1
+
+Nets                                                                2
+    Unloaded nets (LINT-2)                                          2
+--------------------------------------------------------------------------------
+
+Warning: In design 'montgomery', net 'q1[4]' driven by pin 'mult0/Z[9]' has no loads. (LINT-2)
+Warning: In design 'montgomery', net 'q1[5]' driven by pin 'mult0/Z[10]' has no loads. (LINT-2)
+Warning: In design 'mult_6bit_mod2_g2', port 'B[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'mult_6bit_mod2_q2', input port 'B[5]' is connected directly to output port 'Z[5]'. (LINT-29)
+Warning: In design 'mult_6bit_mod2_q2', input port 'B[4]' is connected directly to output port 'Z[4]'. (LINT-29)
+Warning: In design 'mult_6bit_mod2_q2', input port 'B[3]' is connected directly to output port 'Z[3]'. (LINT-29)
+Warning: In design 'mult_6bit_mod2_g2', input port 'B[1]' is connected directly to output port 'Z[1]'. (LINT-29)
+Warning: In design 'mult_6bit_mod2_g2', input port 'B[0]' is connected directly to output port 'Z[0]'. (LINT-29)
+Warning: In design 'mult_5bit_mod2', output port 'Z[10]' is connected directly to output port 'Z[9]'. (LINT-31)
+Warning: In design 'montgomery', a pin on submodule 'mult1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[5]' is connected to logic 0. 
+Warning: In design 'montgomery', a pin on submodule 'mult1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[4]' is connected to logic 0. 
+Warning: In design 'montgomery', the same net is connected to more than one pin on submodule 'mult1'. (LINT-33)
+   Net 'n1' is connected to pins 'B[5]', 'B[4]''.
+Warning: In design 'mult_5bit_mod2', output port 'Z[10]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'mult_5bit_mod2', output port 'Z[9]' is connected directly to 'logic 0'. (LINT-52)
+1
+#----------------------------------------------------------------------#
+#                           FINAL QOR REPORT                           #
+#----------------------------------------------------------------------#
+current_design $design_name
+Current design is 'montgomery'.
+{montgomery}
+file delete $design_name.profile_post.out
+report_qor
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : qor
+Design : montgomery
+Version: M-2016.12-SP3
+Date   : Sun May  8 17:05:32 2022
+****************************************
+
+
+  Timing Path Group (none)
+  -----------------------------------
+  Levels of Logic:               6.00
+  Critical Path Length:          0.62
+  Critical Path Slack:         uninit
+  Critical Path Clk Period:       n/a
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:          3
+  Hierarchical Port Count:         44
+  Leaf Cell Count:                 45
+  Buf/Inv Cell Count:               0
+  Buf Cell Count:                   0
+  Inv Cell Count:                   0
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:        45
+  Sequential Cell Count:            0
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:      159.599998
+  Noncombinational Area:     0.000000
+  Buf/Inv Area:              0.000000
+  Total Buffer Area:             0.00
+  Total Inverter Area:           0.00
+  Macro/Black Box Area:      0.000000
+  Net Area:               3406.632507
+  -----------------------------------
+  Cell Area:               159.599998
+  Design Area:            3566.232506
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:            57
+  Nets With Violations:             0
+  Max Trans Violations:             0
+  Max Cap Violations:               0
+  -----------------------------------
+
+
+  Hostname: lnissrv4
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                    0.09
+  Logic Optimization:                  0.04
+  Mapping Optimization:                0.37
+  -----------------------------------------
+  Overall Compile Time:                2.82
+  Overall Compile Wall Clock Time:     3.17
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+
+  Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+  --------------------------------------------------------------------
+
+
+1
+report_area
+ 
+****************************************
+Report : area
+Design : montgomery
+Version: M-2016.12-SP3
+Date   : Sun May  8 17:05:32 2022
+****************************************
+
+Library(s) Used:
+
+    scadv12_cmos10sf_rvt_tt_1p0v_25c (File: /uusoc/facility/cad_common/Artisan/GF/cmos65g/aci/sc-adv12/synopsys/scadv12_cmos10sf_rvt_tt_1p0v_25c.db)
+
+Number of ports:                           59
+Number of nets:                            98
+Number of cells:                           50
+Number of combinational cells:             45
+Number of sequential cells:                 2
+Number of macros/black boxes:               0
+Number of buf/inv:                          0
+Number of references:                       4
+
+Combinational area:                159.599998
+Buf/Inv area:                        0.000000
+Noncombinational area:               0.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:            3406.632507
+
+Total cell area:                   159.599998
+Total area:                       3566.232506
+1
+report_timing -attributes
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : montgomery
+Version: M-2016.12-SP3
+Date   : Sun May  8 17:05:32 2022
+****************************************
+
+Operating Conditions: tt_1p0v_25c   Library: scadv12_cmos10sf_rvt_tt_1p0v_25c
+Wire Load Model Mode: segmented
+
+  Startpoint: A[3] (input port)
+  Endpoint: Z[2] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  montgomery         cmos10sf_wl5          scadv12_cmos10sf_rvt_tt_1p0v_25c
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                    Incr       Path      Attributes
+  --------------------------------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  A[3] (in)                                0.00       0.00 r
+  mult0/A[3] (mult_5bit_mod2)              0.00       0.00 r
+  mult0/U14/Y (NAND2X0P5A12TR)             0.03       0.03 f
+  mult0/U13/Y (XOR2X0P5A12TR)              0.07       0.10 r
+  mult0/U10/Y (XOR3X0P5A12TR)              0.12       0.22 f
+  mult0/Z[5] (mult_5bit_mod2)              0.00       0.22 f
+  mult1/B[0] (mult_6bit_mod2_q2)           0.00       0.22 f
+  mult1/U3/Y (XOR3X0P5A12TR)               0.20       0.42 r
+  mult1/Z[0] (mult_6bit_mod2_q2)           0.00       0.42 r
+  mult2/B[0] (mult_6bit_mod2_g2)           0.00       0.42 r
+  mult2/U3/Y (XOR2X0P5A12TR)               0.10       0.52 r
+  mult2/Z[2] (mult_6bit_mod2_g2)           0.00       0.52 r
+  U9/Y (XOR2X0P5A12TR)                     0.11       0.62 r
+  Z[2] (out)                               0.00       0.62 r
+  data arrival time                                   0.62
+  --------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
+report_constraints
+ 
+****************************************
+Report : constraint
+Design : montgomery
+Version: M-2016.12-SP3
+Date   : Sun May  8 17:05:32 2022
+****************************************
+
+
+
+    Constraint                                       Cost
+    -----------------------------------------------------
+    max_transition                                   0.00 (MET)
+    max_fanout                                       0.00 (MET)
+    max_capacitance                                  0.00 (MET)
+
+
+1
+checkpoint report
+CPU-report: 5
+MEM-report: 218288
+CLK-report: 1652051132
+#----------------------------------------------------------------------#
+#                                 WRITE                                #
+#----------------------------------------------------------------------#
+current_design $design_name
+Current design is 'montgomery'.
+{montgomery}
+write -format ddc -hierarchy -output $design_name.dcopt.ddc
+Writing ddc file 'montgomery.dcopt.ddc'.
+1
+write -format verilog -hierarchy -output $design_name.dcopt.v
+Writing verilog file '/research/ece/lnis/USERS/boston/CryptoHW/NB_multiplier/montgomery/synthesis/montgomery.dcopt.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+write -format verilog -hierarchy -output ./../pnr/design_files/$design_name.dcopt.v
+Writing verilog file '/research/ece/lnis/USERS/boston/CryptoHW/NB_multiplier/montgomery/pnr/design_files/montgomery.dcopt.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+write_sdc $design_name.dcopt.sdc
+1
+write_sdc ./../pnr/design_files/$design_name.dcopt.sdc
+1
+write_sdf -context verilog $design_name.dcopt.sdf
+Information: Annotated 'cell' delays are assumed to include load delay. (UID-282)
+Information: Writing timing information to file '/research/ece/lnis/USERS/boston/CryptoHW/NB_multiplier/montgomery/synthesis/montgomery.dcopt.sdf'. (WT-3)
+1
+redirect $design_name.dcopt.constraints { report_constraints -all_violators -verbose -significant_digits 3}
+redirect $design_name.dcopt.paths { report_timing -path end -delay max -max_paths 2000 -nworst 100 -significant_digits 3}
+redirect $design_name.dcopt.fullpaths { report_timing -path full -delay max -max_paths 2000 -nworst 100 -significant_digits 3}
+redirect $design_name.dcopt.area { report_area }
+redirect $design_name.dcopt.power { report_power }
+# write_mw_verilog -design $design_name $design_name.mw.v
+write_parasitics -format reduced -output $design_name.spef
+Information: Writing parasitics to file '/research/ece/lnis/USERS/boston/CryptoHW/NB_multiplier/montgomery/synthesis/montgomery.spef'. (WP-3)
+1
+checkpoint write
+CPU-write: 6
+MEM-write: 222896
+CLK-write: 1652051134
+exit
+
+Thank you...
