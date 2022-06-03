@@ -1,0 +1,798 @@
+Using setup-synopsys from S17
+Assuming your OS is amd64
+You are now set up to run the synopsys tools.
+
+Working directory is /research/ece/lnis/USERS/boston/CryptoHW/NB_multiplier/nb_mult/synthesis
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+               Version M-2016.12-SP3 for linux64 - Apr 18, 2017 
+
+                    Copyright (c) 1988 - 2017 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+### This is the script for optimizing the verilog
+#----------------------------------------------------------------------#
+#                        DESIGN DEFINITION                             #
+#----------------------------------------------------------------------#
+set design_name  nb_mult
+nb_mult
+set design_dir   "."
+.
+### EDIT $design_name.cstr.tcl for timing and other constraints!
+############## technology files #########################
+### can include multiple .db files in string.
+### Utah
+#set lib_name  "UofU_Digital_v1_2"
+#set lib_db    "UofU_Digital_v1_2.db"
+#set lib_dir   "/uusoc/facility/cad_common/local/Cadence/lib/UofU_Digital_v1_2/"
+### set lib_pdb   physical db defs
+## UWashington 130nm:
+#set lib_name  "static184cg_1.5V_25C"
+#set lib_db    "static184cg_1.5V_25C.db"
+#set lib_dir   "/uusoc/facility/cad_common/local/Cadence/lib/cg_lib13_v096/"
+##set lib_pdb   physical db defs
+## Artisan 130nm:
+#set lib_name  "typical"
+#set lib_db    "typical.db"
+#set lib_dir   "/uusoc/facility/cad_common/IBM/Artisan/8RF-1.2v/aci/sc-x/synopsys/"
+#set lib_pdb   "ibm13svt_8lm_2thick_3rf.pdb"
+## Artisan 65nm:
+set lib_name  "scadv12_cmos10sf_rvt_tt_1p0v_25c"
+scadv12_cmos10sf_rvt_tt_1p0v_25c
+set lib_db    "scadv12_cmos10sf_rvt_tt_1p0v_25c.db"
+scadv12_cmos10sf_rvt_tt_1p0v_25c.db
+set lib_dir   "/uusoc/facility/cad_common/Artisan/GF/cmos65g/aci/sc-adv12/synopsys"
+/uusoc/facility/cad_common/Artisan/GF/cmos65g/aci/sc-adv12/synopsys
+##set lib_pdb
+############# custom library files #############################
+#set custom_cells ../lib/custom-cells.v
+#set custom_seq   ../lib/custom-sequentials.v
+################################################
+#            DC configuration variables
+# Milkyway related variables
+set mw_design_library $design_name.mw
+nb_mult.mw
+#set mw_power_net   VDD
+#set mw_ground_net  VSS
+set mw_logic1_net  VDD
+VDD
+set mw_logic0_net  VSS
+VSS
+set mw_power_port  VDD
+VDD
+set mw_ground_port VSS
+VSS
+##set mw_tech_file /.../milkyway/tcbn90ghphvt_130a/techfiles/tsmcn90_7lm_6x6.tf
+##set mw_reference_library [list /../milkyway/tcbn90ghphvt_130a /../milkyway/tcbn90ghplvt_130a]
+# db and cache configuration
+set cache_read  {}
+set cache_write {}
+set allow_newer_db_files       true
+true
+set write_compressed_db_files  true
+true
+set sh_source_uses_search_path true
+true
+#################################################
+# Define checkpoint function
+proc checkpoint {name} {
+  echo "CPU-$name: [cputime -self -child]"
+  echo "MEM-$name: [mem]"
+  echo "CLK-$name: [clock seconds]"
+}
+#----------------------------------------------------------------------#
+#                             DESIGN SETUP                             #
+#----------------------------------------------------------------------#
+set search_path [concat  . $design_dir $lib_dir $search_path]
+. . /uusoc/facility/cad_common/Artisan/GF/cmos65g/aci/sc-adv12/synopsys . /uusoc/facility/cad_common/Synopsys/SYN-S17/libraries/syn /uusoc/facility/cad_common/Synopsys/SYN-S17/minpower/syn /uusoc/facility/cad_common/Synopsys/SYN-S17/dw/syn_ver /uusoc/facility/cad_common/Synopsys/SYN-S17/dw/sim_ver
+set search_path "$search_path ${synopsys_root}/libraries/syn"
+. . /uusoc/facility/cad_common/Artisan/GF/cmos65g/aci/sc-adv12/synopsys . /uusoc/facility/cad_common/Synopsys/SYN-S17/libraries/syn /uusoc/facility/cad_common/Synopsys/SYN-S17/minpower/syn /uusoc/facility/cad_common/Synopsys/SYN-S17/dw/syn_ver /uusoc/facility/cad_common/Synopsys/SYN-S17/dw/sim_ver /uusoc/facility/cad_common/Synopsys/SYN-S17/libraries/syn
+set search_path "$search_path ${synopsys_root}/dw/sim_ver"
+. . /uusoc/facility/cad_common/Artisan/GF/cmos65g/aci/sc-adv12/synopsys . /uusoc/facility/cad_common/Synopsys/SYN-S17/libraries/syn /uusoc/facility/cad_common/Synopsys/SYN-S17/minpower/syn /uusoc/facility/cad_common/Synopsys/SYN-S17/dw/syn_ver /uusoc/facility/cad_common/Synopsys/SYN-S17/dw/sim_ver /uusoc/facility/cad_common/Synopsys/SYN-S17/libraries/syn /uusoc/facility/cad_common/Synopsys/SYN-S17/dw/sim_ver
+################################################################
+# DC library definitions
+set local_link_library [list ]
+set target_library $lib_db
+scadv12_cmos10sf_rvt_tt_1p0v_25c.db
+set synthetic_library "dw_foundation.sldb"
+dw_foundation.sldb
+set link_library [concat * $lib_db $synthetic_library]
+* scadv12_cmos10sf_rvt_tt_1p0v_25c.db dw_foundation.sldb
+if [info exists lib_pdb] {
+    set physical_library $lib_pdb
+} else {
+    set physical_library [list ]
+}
+set symbol_library [list ]
+################################################################
+if [info exists dc_shell_mode] {
+    set suppress_errors "$suppress_errors TRANS-1 TIM-111 TIM-164 OPT-109 UID-101 TIM-134 DDB-74"
+}
+ TRANS-1 TIM-111 TIM-164 OPT-109 UID-101 TIM-134 DDB-74
+checkpoint setup
+CPU-setup: 1
+MEM-setup: 49908
+CLK-setup: 1652061242
+#----------------------------------------------------------------------#
+#                        READ DB FROM RTLOPT                           #
+#----------------------------------------------------------------------#
+read_file -format ddc $design_name.rtlopt.ddc
+Loading db file '/uusoc/facility/cad_common/Artisan/GF/cmos65g/aci/sc-adv12/synopsys/scadv12_cmos10sf_rvt_tt_1p0v_25c.db'
+Loading db file '/uusoc/facility/cad_common/Synopsys/SYN-S17/libraries/syn/dw_foundation.sldb'
+Loading db file '/uusoc/facility/cad_common/Synopsys/SYN-S17/libraries/syn/gtech.db'
+Loading db file '/uusoc/facility/cad_common/Synopsys/SYN-S17/libraries/syn/standard.sldb'
+  Loading link library 'scadv12_cmos10sf_rvt_tt_1p0v_25c'
+  Loading link library 'gtech'
+Reading ddc file '/research/ece/lnis/USERS/boston/CryptoHW/NB_multiplier/nb_mult/synthesis/nb_mult.rtlopt.ddc'.
+Loaded 2 designs.
+Current design is 'nb_mult'.
+nb_mult nb_comb
+checkpoint read
+CPU-read: 2
+MEM-read: 218284
+CLK-read: 1652061244
+current_design $design_name
+Current design is 'nb_mult'.
+{nb_mult}
+link
+
+  Linking design 'nb_mult'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (2 designs)               /research/ece/lnis/USERS/boston/CryptoHW/NB_multiplier/nb_mult/synthesis/nb_mult.rtlopt.ddc, etc
+  scadv12_cmos10sf_rvt_tt_1p0v_25c (library) /uusoc/facility/cad_common/Artisan/GF/cmos65g/aci/sc-adv12/synopsys/scadv12_cmos10sf_rvt_tt_1p0v_25c.db
+  dw_foundation.sldb (library) /uusoc/facility/cad_common/Synopsys/SYN-S17/libraries/syn/dw_foundation.sldb
+
+1
+checkpoint link
+CPU-link: 2
+MEM-link: 218284
+CLK-link: 1652061244
+#----------------------------------------------------------------------#
+#                           READ CONSTRAINTS                           #
+#----------------------------------------------------------------------#
+current_design $design_name
+Current design is 'nb_mult'.
+{nb_mult}
+#set formality_link_debug true
+set svf_file_records_change_names_changes true
+true
+set enable_dw_datapath_in_svf true
+true
+#set enable_ununiquify_in_svf true
+set hlo_write_svf_info true
+true
+set synlib_fmlink_output_verilog true
+true
+set enable_constant_propagation_in_svf true
+true
+set_svf $design_name.dcopt.svf
+1
+set_vsdc $design_name.dcopt.vsdc
+1
+current_design  $design_name
+Current design is 'nb_mult'.
+{nb_mult}
+source $design_name.cstr.tcl
+Current design is 'nb_mult'.
+Using operating conditions 'tt_1p0v_25c' found in library 'scadv12_cmos10sf_rvt_tt_1p0v_25c'.
+Warning: overriding result from previous dont_touch_network command on object clk. (UID-1329)
+###source $design_name.tcl
+checkpoint cstr
+CPU-cstr: 2
+MEM-cstr: 218284
+CLK-cstr: 1652061244
+#----------------------------------------------------------------------#
+#                                COMPILE                               #
+#----------------------------------------------------------------------#
+#current_design $design_name
+#set ungroup_record_report_info true
+list_designs -show_file
+
+/research/ece/lnis/USERS/boston/CryptoHW/NB_multiplier/nb_mult/synthesis/nb_mult.rtlopt.ddc
+nb_comb         nb_mult (*)
+1
+current_design $design_name
+Current design is 'nb_mult'.
+{nb_mult}
+echo "Start: [cputime -self -child]"
+Start: 2
+## Do retiming?:x
+set_optimize_registers true
+1
+check_design
+1
+## clock gate design
+insert_clock_gating
+Warning: Clock gating insertion with insert_clock_gating is deprecated and will be removed in a future release; instead use the compile -gate_clock command. (PWR-729)
+Information: Performing clock-gating on design nb_mult
+
+
+Clock Gate Insertion Report
+===============================================================================
+| Gated |                   | Include |      | Enable | Setup | Width | Clock |
+| Group |  Flip-Flop Name   | Exclude | Bits | Cond.  | Cond. | Cond. | Gated |
+===============================================================================
+|       |                   |         |      |        |       |       |       |
+|       |  GATED REGISTERS  |         |      |        |       |       |       |
+| cg0   |                   |         |  10  |  yes   |  yes  |  yes  |  yes  |
+|       |     a_reg[4]      |    -    |  1   |        |       |       |       |
+|       |     a_reg[3]      |    -    |  1   |        |       |       |       |
+|       |     a_reg[2]      |    -    |  1   |        |       |       |       |
+|       |     a_reg[1]      |    -    |  1   |        |       |       |       |
+|       |     a_reg[0]      |    -    |  1   |        |       |       |       |
+|       |     b_reg[4]      |    -    |  1   |        |       |       |       |
+|       |     b_reg[3]      |    -    |  1   |        |       |       |       |
+|       |     b_reg[2]      |    -    |  1   |        |       |       |       |
+|       |     b_reg[1]      |    -    |  1   |        |       |       |       |
+|       |     b_reg[0]      |    -    |  1   |        |       |       |       |
+| cg1   |                   |         |  5   |  yes   |  yes  |  yes  |  yes  |
+|       |     z_reg[4]      |    -    |  1   |        |       |       |       |
+|       |     z_reg[3]      |    -    |  1   |        |       |       |       |
+|       |     z_reg[2]      |    -    |  1   |        |       |       |       |
+|       |     z_reg[1]      |    -    |  1   |        |       |       |       |
+|       |     z_reg[0]      |    -    |  1   |        |       |       |       |
+|       |                   |         |      |        |       |       |       |
+|       | UNGATED REGISTERS |         |      |        |       |       |       |
+|       |   state_reg[2]    |    -    |  1   |   no   |  ??   |  ??   |  no   |
+|       |   state_reg[1]    |    -    |  1   |   no   |  ??   |  ??   |  no   |
+|       |   state_reg[0]    |    -    |  1   |   no   |  ??   |  ??   |  no   |
+===============================================================================
+
+Summary:
+Flip-Flops                        Banks                   Bit-Width
+                              number  percentage      number  percentage
+Clock gated (total):             3           75         15           83
+Clock not gated because
+   Bank was excluded:            0            0          0            0
+   Bank width too small:         0            0          0            0
+   Enable condition not met:     1           25          3           16
+   Setup condition violated:     0            0          0            0
+Total:                           4          100         18          100
+
+
+Information: Performing clock-gating on design nb_comb
+1
+## compile design
+compile -area_effort high -map_effort high
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | M-2016.12-DWBB_201612.3 |     *     |
+| Licensed DW Building Blocks        | M-2016.12-DWBB_201612.3 |           |
+============================================================================
+
+Information: Retiming is enabled. SVF file must be used for formal verification. (OPT-1210)
+
+Information: There are 3 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'SNPS_CLOCK_GATE_LOW_nb_mult'
+  Processing 'SNPS_CLOCK_GATE_HIGH_nb_mult'
+  Mapping integrated clock gating circuitry
+  Processing 'nb_comb'
+  Processing 'nb_mult'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+
+  Beginning Mapping Optimizations  (High effort)
+  -------------------------------
+Information: Checking pipeline property of design nb_mult. (RTDC-137)
+Information: Pipeline detection aborted. Reason: cells z_reg[0], z_reg[1], z_reg[2], z_reg[3], z_reg[4] are on a feedback loop. (RTDC-138)
+Information: Aborted pipeline detection on design nb_mult. (RTDC-140)
+  Mapping Optimization (Phase 1)
+Information: Checkpoint guidance is generated in the .svf file. (INFO-122)
+  Retiming nb_mult (top)
+Warning: No clock net driving clock pin of cell 'next_state_reg[0]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'next_state_reg[1]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'next_state_reg[2]'. (RTDC-5)
+Warning: There are buffer or inverter cells in the
+	clock tree. The clock tree has to be recreated after
+	retiming. (RTDC-47)
+  Preferred flip-flop is DFFQX1A12TR with setup = 0.02
+
+
+  Retiming base-clock clock, rising edge.
+  Beginning minimum period retiming ...
+  ... minimum period retiming done.
+  Beginning minimum area retiming step 1 ...
+  ... minimum area retiming step 1 done.
+  Beginning minimum area retiming step 2 ...
+  5% 10% 15% 20% 25% 30% 35% 40% 45% 50% 55% 60% 65% 70% 75% 80% 85% 90% 95% 100% 
+  ... minimum area retiming step 2 done.
+  Beginning minimum area retiming step 3 ...
+  20% 40% 60% 80% ... 100% 
+  ... minimum area retiming step 3 done.
+  Beginning final register move ...
+  ... final register move done.
+  Lower bound estimate = 1.02
+  Critical path length = 1.02
+  Clock correction = 0.16 (clock-to-Q delay = 0.09, setup = 0.02, uncertainty = 0.05)
+Information: Timing loop detected. (OPT-150)
+	next_state_reg[2]/Q U9/A U9/Y U12/A U12/Y next_state_reg[2]/enable 
+Information: Timing loop detected. (OPT-150)
+	next_state_reg[1]/enable next_state_reg[1]/Q U10/A U10/Y U12/B U12/Y 
+Warning: Disabling timing arc between pins 'A' and 'Y' on cell 'U9'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A' and 'Y' on cell 'U10'
+         to break a timing loop. (OPT-314)
+
+  Retiming base-clock clock, falling edge.
+  Beginning minimum period retiming ...
+  ... minimum period retiming done.
+  Beginning minimum area retiming step 1 ...
+  ... minimum area retiming step 1 done.
+  Beginning minimum area retiming step 2 ...
+  5% 10% 15% 20% 25% 30% 35% 40% 45% 50% 55% 60% 65% 70% 75% 80% 85% 90% 95% 100% 
+  ... minimum area retiming step 2 done.
+  Beginning minimum area retiming step 3 ...
+  20% 40% 60% 80% ... 100% 
+  ... minimum area retiming step 3 done.
+  Beginning final register move ...
+  ... final register move done.
+Registers not moved
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:01     528.0      0.00       0.0       0.0                                0.00  
+    0:00:01     528.0      0.00       0.0       0.0                                0.00  
+    0:00:01     528.0      0.00       0.0       0.0                                0.00  
+    0:00:01     528.0      0.00       0.0       0.0                                0.00  
+    0:00:01     528.0      0.00       0.0       0.0                                0.00  
+    0:00:01     354.0      0.10       0.5       0.0                                0.00  
+    0:00:01     362.4      0.08       0.3       0.0                                0.00  
+    0:00:01     387.6      0.03       0.1       0.0                                0.00  
+    0:00:01     395.4      0.03       0.1       0.0                                0.00  
+    0:00:01     386.4      0.03       0.1       0.0                                0.00  
+    0:00:01     387.6      0.03       0.1       0.0                                0.00  
+    0:00:01     388.8      0.03       0.1       0.0                                0.00  
+    0:00:02     387.6      0.03       0.1       0.0                                0.00  
+    0:00:02     388.8      0.03       0.1       0.0                                0.00  
+    0:00:02     388.8      0.03       0.1       0.0                                0.00  
+    0:00:02     389.4      0.00       0.0       0.0                                0.00  
+    0:00:02     389.4      0.00       0.0       0.0                                0.00  
+    0:00:02     389.4      0.00       0.0       0.0                                0.00  
+    0:00:02     389.4      0.00       0.0       0.0                                0.00  
+    0:00:02     389.4      0.00       0.0       0.0                                0.00  
+    0:00:02     389.4      0.00       0.0       0.0                                0.00  
+    0:00:02     389.4      0.00       0.0       0.0                                0.00  
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:02     389.4      0.00       0.0       0.0                                0.00  
+    0:00:02     389.4      0.00       0.0       0.0                                0.00  
+    0:00:02     388.8      0.00       0.0       0.0                                0.00  
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:02     388.8      0.00       0.0       0.0                                0.00  
+    0:00:02     388.8      0.00       0.0       0.0                                0.00  
+    0:00:02     385.8      0.00       0.0       0.0                                0.00  
+    0:00:02     385.8      0.00       0.0       0.0                                0.00  
+    0:00:02     385.8      0.00       0.0       0.0                                0.00  
+    0:00:02     385.8      0.00       0.0       0.0                                0.00  
+    0:00:02     385.8      0.00       0.0       0.0                                0.00  
+    0:00:02     382.2      0.00       0.0       0.0                                0.00  
+    0:00:02     382.2      0.00       0.0       0.0                                0.00  
+    0:00:02     382.2      0.00       0.0       0.0                                0.00  
+    0:00:02     382.2      0.00       0.0       0.0                                0.00  
+    0:00:02     382.2      0.00       0.0       0.0                                0.00  
+    0:00:02     382.2      0.00       0.0       0.0                                0.00  
+    0:00:02     360.6      0.00       0.0       0.0                                0.00  
+Loading db file '/uusoc/facility/cad_common/Artisan/GF/cmos65g/aci/sc-adv12/synopsys/scadv12_cmos10sf_rvt_tt_1p0v_25c.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+1
+#compile -area_effort high -power_effort high
+#compile -area_effort high -power_effort high -map_effort medium -ungroup_all
+#compile -area_effort high -power_effort high -map_effort high -ungroup_all -verify_effort high
+## guarantee naming consistency
+source namingrules.dc
+
+Design          Type    Object                  New Name
+--------------------------------------------------------------------------------
+Warning: The specified replacement character (_) is conflicting with the specified allowed or restricted character.   (UCN-4)
+nb_mult         cell    z_reg[4]                z_reg_4_
+nb_mult         cell    z_reg[3]                z_reg_3_
+nb_mult         cell    z_reg[2]                z_reg_2_
+nb_mult         cell    z_reg[1]                z_reg_1_
+nb_mult         cell    z_reg[0]                z_reg_0_
+nb_mult         cell    next_state_reg[0]       next_state_reg_0_
+nb_mult         cell    next_state_reg[2]       next_state_reg_2_
+nb_mult         cell    next_state_reg[1]       next_state_reg_1_
+nb_mult         net     a                       a0
+nb_mult         net     a[4]                    a0[4]
+nb_mult         net     a[3]                    a0[3]
+nb_mult         net     a[2]                    a0[2]
+nb_mult         net     a[1]                    a0[1]
+nb_mult         net     a[0]                    a0[0]
+nb_mult         net     b                       b0
+nb_mult         net     b[4]                    b0[4]
+nb_mult         net     b[3]                    b0[3]
+nb_mult         net     b[2]                    b0[2]
+nb_mult         net     b[1]                    b0[1]
+nb_mult         net     b[0]                    b0[0]
+nb_mult         net     n113                    n1130
+nb_mult         net     n114                    n1140
+nb_mult         net     n115                    n1150
+nb_mult         net     n116                    n1160
+nb_comb         port    r3                      r30
+nb_comb         port    r4                      r40
+nb_comb         net     r3                      r30
+nb_comb         net     r4                      r40
+
+Design          Type    Object                  New Name
+--------------------------------------------------------------------------------
+nb_mult         cell    z_reg_4_                z_reg_4_0
+nb_mult         cell    z_reg_3_                z_reg_3_0
+nb_mult         cell    z_reg_2_                z_reg_2_0
+nb_mult         cell    z_reg_1_                z_reg_1_0
+nb_mult         cell    z_reg_0_                z_reg_0_0
+nb_mult         cell    next_state_reg_0_       next_state_reg_0_0
+nb_mult         cell    next_state_reg_2_       next_state_reg_2_0
+nb_mult         cell    next_state_reg_1_       next_state_reg_1_0
+1
+echo "End: [cputime -self -child]"
+End: 5
+checkpoint compile
+CPU-compile: 5
+MEM-compile: 218284
+CLK-compile: 1652061247
+check_design
+ 
+****************************************
+check_design summary:
+Version:     M-2016.12-SP3
+Date:        Sun May  8 19:54:07 2022
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Cells                                                               2
+    Connected to power or ground (LINT-32)                          2
+--------------------------------------------------------------------------------
+
+Warning: In design 'nb_mult', a pin on submodule 'clk_gate_a_reg' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'TE' is connected to logic 0. 
+Warning: In design 'nb_mult', a pin on submodule 'clk_gate_z_reg' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'TE' is connected to logic 0. 
+1
+#----------------------------------------------------------------------#
+#                           FINAL QOR REPORT                           #
+#----------------------------------------------------------------------#
+current_design $design_name
+Current design is 'nb_mult'.
+{nb_mult}
+file delete $design_name.profile_post.out
+report_qor
+Information: Updating design information... (UID-85)
+Information: Timing loop detected. (OPT-150)
+	next_state_reg_2_0/G next_state_reg_2_0/Q U9/A U9/Y U115/A U115/Y 
+Information: Timing loop detected. (OPT-150)
+	next_state_reg_1_0/G next_state_reg_1_0/Q U10/A U10/Y U115/B U115/Y 
+Warning: Disabling timing arc between pins 'A' and 'Y' on cell 'U9'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A' and 'Y' on cell 'U10'
+         to break a timing loop. (OPT-314)
+ 
+****************************************
+Report : qor
+Design : nb_mult
+Version: M-2016.12-SP3
+Date   : Sun May  8 19:54:07 2022
+****************************************
+
+
+  Timing Path Group 'clock'
+  -----------------------------------
+  Levels of Logic:               1.00
+  Critical Path Length:          0.23
+  Critical Path Slack:           0.00
+  Critical Path Clk Period:      1.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:          3
+  Hierarchical Port Count:         20
+  Leaf Cell Count:                 63
+  Buf/Inv Cell Count:               2
+  Buf Cell Count:                   1
+  Inv Cell Count:                   1
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:        39
+  Sequential Cell Count:           24
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:      145.199997
+  Noncombinational Area:   215.400003
+  Buf/Inv Area:              4.200000
+  Total Buffer Area:             2.40
+  Total Inverter Area:           1.80
+  Macro/Black Box Area:      0.000000
+  Net Area:               4036.626190
+  -----------------------------------
+  Cell Area:               360.600000
+  Design Area:            4397.226190
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:            76
+  Nets With Violations:             0
+  Max Trans Violations:             0
+  Max Cap Violations:               0
+  -----------------------------------
+
+
+  Hostname: lnissrv4
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                    0.21
+  Logic Optimization:                  0.16
+  Mapping Optimization:                0.41
+  -----------------------------------------
+  Overall Compile Time:                3.33
+  Overall Compile Wall Clock Time:     3.64
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+
+  Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+  --------------------------------------------------------------------
+
+
+1
+report_area
+ 
+****************************************
+Report : area
+Design : nb_mult
+Version: M-2016.12-SP3
+Date   : Sun May  8 19:54:07 2022
+****************************************
+
+Library(s) Used:
+
+    scadv12_cmos10sf_rvt_tt_1p0v_25c (File: /uusoc/facility/cad_common/Artisan/GF/cmos65g/aci/sc-adv12/synopsys/scadv12_cmos10sf_rvt_tt_1p0v_25c.db)
+
+Number of ports:                           37
+Number of nets:                            96
+Number of cells:                           67
+Number of combinational cells:             39
+Number of sequential cells:                25
+Number of macros/black boxes:               0
+Number of buf/inv:                          2
+Number of references:                      20
+
+Combinational area:                145.199997
+Buf/Inv area:                        4.200000
+Noncombinational area:             215.400003
+Macro/Black Box area:                0.000000
+Net Interconnect area:            4036.626190
+
+Total cell area:                   360.600000
+Total area:                       4397.226190
+1
+report_timing -attributes
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : nb_mult
+Version: M-2016.12-SP3
+Date   : Sun May  8 19:54:07 2022
+****************************************
+
+Operating Conditions: tt_1p0v_25c   Library: scadv12_cmos10sf_rvt_tt_1p0v_25c
+Wire Load Model Mode: segmented
+
+  Startpoint: clock_r_REG1_S1
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: clk_gate_z_reg/latch
+            (positive level-sensitive latch clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  nb_mult            cmos10sf_wl5          scadv12_cmos10sf_rvt_tt_1p0v_25c
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                                   Incr       Path      Attributes
+  -----------------------------------------------------------------------------------------------
+  clock clock (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock_r_REG1_S1/CK (DFFQX0P5A12TR)                      0.00       0.00 r
+  clock_r_REG1_S1/Q (DFFQX0P5A12TR)                       0.16       0.16 r
+  clk_gate_z_reg/EN (SNPS_CLOCK_GATE_LOW_nb_mult)         0.00       0.16 r
+  clk_gate_z_reg/test_or/Y (OR2X1A12TR)                   0.06       0.23 r    so 
+  clk_gate_z_reg/latch/D (LATQNX1A12TR)                   0.00       0.23 r
+  data arrival time                                                  0.23
+
+  clock clock (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                      -0.05      -0.05
+  clk_gate_z_reg/latch/G (LATQNX1A12TR)                   0.00      -0.05 r
+  time borrowed from endpoint                             0.28       0.23
+  data required time                                                 0.23
+  -----------------------------------------------------------------------------------------------
+  data required time                                                 0.23
+  data arrival time                                                 -0.23
+  -----------------------------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+  Time Borrowing Information
+  --------------------------------------------------------------
+  clock nominal pulse width                               0.50   
+  library setup time                                     -0.04   
+  --------------------------------------------------------------
+  max time borrow                                         0.46   
+  --------------------------------------------------------------
+  actual time borrow                                      0.28   
+  clock uncertainty                                      -0.05   
+  --------------------------------------------------------------
+  time given to startpoint                                0.23   
+  --------------------------------------------------------------
+
+
+1
+report_constraints
+ 
+****************************************
+Report : constraint
+Design : nb_mult
+Version: M-2016.12-SP3
+Date   : Sun May  8 19:54:07 2022
+****************************************
+
+
+                                                   Weighted
+    Group (max_delay/setup)      Cost     Weight     Cost
+    -----------------------------------------------------
+    clock                        0.00      1.00      0.00
+    default                      0.00      1.00      0.00
+    -----------------------------------------------------
+    max_delay/setup                                  0.00
+
+                              Total Neg  Critical
+    Group (critical_range)      Slack    Endpoints   Cost
+    -----------------------------------------------------
+    clock                        0.00         0      0.00
+    default                      0.00         0      0.00
+    -----------------------------------------------------
+    critical_range                                   0.00
+
+                                                   Weighted
+    Group (min_delay/hold)       Cost     Weight     Cost
+    -----------------------------------------------------
+    clock                        0.00      1.00      0.00
+    default                      0.00      1.00      0.00
+    -----------------------------------------------------
+    min_delay/hold                                   0.00
+
+
+    Constraint                                       Cost
+    -----------------------------------------------------
+    max_transition                                   0.00 (MET)
+    max_fanout                                       0.00 (MET)
+    max_capacitance                                  0.00 (MET)
+    max_delay/setup                                  0.00 (MET)
+    sequential_clock_pulse_width                     0.00 (MET)
+    critical_range                                   0.00 (MET)
+    min_delay/hold                                   0.00 (MET)
+    min_period                                       0.00 (MET)
+
+
+1
+checkpoint report
+CPU-report: 5
+MEM-report: 218284
+CLK-report: 1652061247
+#----------------------------------------------------------------------#
+#                                 WRITE                                #
+#----------------------------------------------------------------------#
+current_design $design_name
+Current design is 'nb_mult'.
+{nb_mult}
+write -format ddc -hierarchy -output $design_name.dcopt.ddc
+Writing ddc file 'nb_mult.dcopt.ddc'.
+1
+write -format verilog -hierarchy -output $design_name.dcopt.v
+Writing verilog file '/research/ece/lnis/USERS/boston/CryptoHW/NB_multiplier/nb_mult/synthesis/nb_mult.dcopt.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+write -format verilog -hierarchy -output ./../pnr/design_files/$design_name.dcopt.v
+Writing verilog file '/research/ece/lnis/USERS/boston/CryptoHW/NB_multiplier/nb_mult/pnr/design_files/nb_mult.dcopt.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+write_sdc $design_name.dcopt.sdc
+1
+write_sdc ./../pnr/design_files/$design_name.dcopt.sdc
+1
+write_sdf -context verilog $design_name.dcopt.sdf
+Information: Annotated 'cell' delays are assumed to include load delay. (UID-282)
+Information: Writing timing information to file '/research/ece/lnis/USERS/boston/CryptoHW/NB_multiplier/nb_mult/synthesis/nb_mult.dcopt.sdf'. (WT-3)
+1
+redirect $design_name.dcopt.constraints { report_constraints -all_violators -verbose -significant_digits 3}
+redirect $design_name.dcopt.paths { report_timing -path end -delay max -max_paths 2000 -nworst 100 -significant_digits 3}
+redirect $design_name.dcopt.fullpaths { report_timing -path full -delay max -max_paths 2000 -nworst 100 -significant_digits 3}
+redirect $design_name.dcopt.area { report_area }
+redirect $design_name.dcopt.power { report_power }
+# write_mw_verilog -design $design_name $design_name.mw.v
+write_parasitics -format reduced -output $design_name.spef
+Information: Writing parasitics to file '/research/ece/lnis/USERS/boston/CryptoHW/NB_multiplier/nb_mult/synthesis/nb_mult.spef'. (WP-3)
+1
+checkpoint write
+CPU-write: 7
+MEM-write: 223724
+CLK-write: 1652061249
+exit
+
+Thank you...

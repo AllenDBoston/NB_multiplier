@@ -1,0 +1,1217 @@
+ 
+****************************************
+Report : timing
+        -path end
+        -delay max
+        -nworst 100
+        -max_paths 2000
+Design : nb_mult
+Version: M-2016.12-SP3
+Date   : Sun May  8 19:54:07 2022
+****************************************
+
+Operating Conditions: tt_1p0v_25c   Library: scadv12_cmos10sf_rvt_tt_1p0v_25c
+Wire Load Model Mode: segmented
+
+Endpoint                         Path Delay     Path Required     Slack
+------------------------------------------------------------------------
+clk_gate_z_reg/latch/D (LATQNX1A12TR)
+                                   0.226 r           0.226        0.000
+clk_gate_z_reg/latch/D (LATQNX1A12TR)
+                                   0.208 f           0.208        0.000
+z_reg_2_0/D (DFFNQX1A12TR)         0.419 f           0.420        0.002
+z_reg_1_0/D (DFFNQX1A12TR)         0.419 f           0.420        0.002
+z_reg_3_0/D (DFFNQX1A12TR)         0.418 f           0.422        0.004
+z_reg_3_0/D (DFFNQX1A12TR)         0.417 f           0.422        0.004
+z_reg_3_0/D (DFFNQX1A12TR)         0.415 f           0.422        0.007
+z_reg_0_0/D (DFFNQX1A12TR)         0.415 f           0.423        0.008
+z_reg_3_0/D (DFFNQX1A12TR)         0.414 f           0.422        0.008
+z_reg_3_0/D (DFFNQX1A12TR)         0.414 f           0.422        0.008
+z_reg_0_0/D (DFFNQX1A12TR)         0.414 f           0.423        0.008
+z_reg_3_0/D (DFFNQX1A12TR)         0.413 f           0.422        0.009
+z_reg_3_0/D (DFFNQX1A12TR)         0.411 r           0.422        0.011
+z_reg_4_0/D (DFFNQX1A12TR)         0.410 f           0.422        0.012
+z_reg_3_0/D (DFFNQX1A12TR)         0.410 f           0.422        0.012
+z_reg_3_0/D (DFFNQX1A12TR)         0.410 f           0.422        0.012
+z_reg_0_0/D (DFFNQX1A12TR)         0.411 f           0.423        0.012
+z_reg_3_0/D (DFFNQX1A12TR)         0.410 r           0.422        0.012
+z_reg_3_0/D (DFFNQX1A12TR)         0.410 r           0.422        0.012
+z_reg_0_0/D (DFFNQX1A12TR)         0.410 f           0.423        0.012
+z_reg_3_0/D (DFFNQX1A12TR)         0.409 f           0.422        0.013
+z_reg_2_0/D (DFFNQX1A12TR)         0.408 f           0.420        0.013
+z_reg_1_0/D (DFFNQX1A12TR)         0.408 f           0.420        0.013
+z_reg_3_0/D (DFFNQX1A12TR)         0.409 f           0.422        0.013
+z_reg_3_0/D (DFFNQX1A12TR)         0.409 r           0.422        0.013
+z_reg_3_0/D (DFFNQX1A12TR)         0.408 f           0.422        0.013
+z_reg_0_0/D (DFFNQX1A12TR)         0.408 r           0.423        0.015
+z_reg_0_0/D (DFFNQX1A12TR)         0.407 r           0.423        0.016
+z_reg_0_0/D (DFFNQX1A12TR)         0.406 f           0.423        0.016
+z_reg_3_0/D (DFFNQX1A12TR)         0.406 f           0.422        0.016
+z_reg_0_0/D (DFFNQX1A12TR)         0.406 f           0.423        0.017
+z_reg_3_0/D (DFFNQX1A12TR)         0.405 f           0.422        0.017
+z_reg_3_0/D (DFFNQX1A12TR)         0.405 f           0.422        0.017
+z_reg_0_0/D (DFFNQX1A12TR)         0.405 f           0.423        0.017
+z_reg_3_0/D (DFFNQX1A12TR)         0.404 f           0.422        0.018
+z_reg_3_0/D (DFFNQX1A12TR)         0.401 r           0.422        0.020
+z_reg_3_0/D (DFFNQX1A12TR)         0.401 r           0.422        0.020
+z_reg_0_0/D (DFFNQX1A12TR)         0.402 f           0.423        0.021
+z_reg_3_0/D (DFFNQX1A12TR)         0.401 r           0.422        0.021
+z_reg_3_0/D (DFFNQX1A12TR)         0.401 r           0.422        0.021
+z_reg_3_0/D (DFFNQX1A12TR)         0.401 f           0.422        0.021
+z_reg_0_0/D (DFFNQX1A12TR)         0.401 f           0.423        0.021
+z_reg_3_0/D (DFFNQX1A12TR)         0.400 r           0.422        0.021
+z_reg_3_0/D (DFFNQX1A12TR)         0.400 f           0.422        0.022
+z_reg_4_0/D (DFFNQX1A12TR)         0.399 f           0.422        0.022
+z_reg_3_0/D (DFFNQX1A12TR)         0.399 f           0.422        0.022
+z_reg_3_0/D (DFFNQX1A12TR)         0.399 r           0.422        0.022
+z_reg_3_0/D (DFFNQX1A12TR)         0.399 r           0.422        0.023
+z_reg_2_0/D (DFFNQX1A12TR)         0.397 r           0.420        0.023
+z_reg_1_0/D (DFFNQX1A12TR)         0.397 r           0.420        0.023
+z_reg_3_0/D (DFFNQX1A12TR)         0.398 r           0.422        0.024
+z_reg_0_0/D (DFFNQX1A12TR)         0.399 r           0.423        0.024
+z_reg_0_0/D (DFFNQX1A12TR)         0.398 r           0.423        0.024
+z_reg_0_0/D (DFFNQX1A12TR)         0.398 r           0.423        0.025
+z_reg_0_0/D (DFFNQX1A12TR)         0.398 r           0.423        0.025
+z_reg_0_0/D (DFFNQX1A12TR)         0.395 f           0.423        0.027
+z_reg_3_0/D (DFFNQX1A12TR)         0.394 f           0.422        0.028
+z_reg_3_0/D (DFFNQX1A12TR)         0.393 f           0.422        0.028
+z_reg_3_0/D (DFFNQX1A12TR)         0.392 r           0.422        0.029
+z_reg_3_0/D (DFFNQX1A12TR)         0.392 r           0.422        0.030
+z_reg_3_0/D (DFFNQX1A12TR)         0.391 f           0.422        0.031
+z_reg_2_0/D (DFFNQX1A12TR)         0.389 r           0.420        0.032
+z_reg_1_0/D (DFFNQX1A12TR)         0.389 r           0.420        0.032
+z_reg_3_0/D (DFFNQX1A12TR)         0.390 f           0.422        0.032
+z_reg_4_0/D (DFFNQX1A12TR)         0.390 r           0.422        0.032
+z_reg_3_0/D (DFFNQX1A12TR)         0.390 r           0.422        0.032
+z_reg_2_0/D (DFFNQX1A12TR)         0.389 f           0.420        0.032
+z_reg_1_0/D (DFFNQX1A12TR)         0.389 f           0.420        0.032
+z_reg_0_0/D (DFFNQX1A12TR)         0.391 f           0.423        0.032
+z_reg_3_0/D (DFFNQX1A12TR)         0.390 f           0.422        0.032
+z_reg_0_0/D (DFFNQX1A12TR)         0.390 f           0.423        0.032
+z_reg_3_0/D (DFFNQX1A12TR)         0.389 r           0.422        0.032
+z_reg_3_0/D (DFFNQX1A12TR)         0.389 f           0.422        0.033
+z_reg_0_0/D (DFFNQX1A12TR)         0.389 r           0.423        0.033
+z_reg_3_0/D (DFFNQX1A12TR)         0.388 r           0.422        0.033
+z_reg_0_0/D (DFFNQX1A12TR)         0.389 r           0.423        0.034
+z_reg_3_0/D (DFFNQX1A12TR)         0.386 r           0.422        0.035
+z_reg_4_0/D (DFFNQX1A12TR)         0.386 r           0.422        0.035
+z_reg_3_0/D (DFFNQX1A12TR)         0.386 f           0.422        0.036
+z_reg_3_0/D (DFFNQX1A12TR)         0.386 r           0.422        0.036
+z_reg_0_0/D (DFFNQX1A12TR)         0.387 f           0.423        0.036
+z_reg_0_0/D (DFFNQX1A12TR)         0.387 r           0.423        0.036
+z_reg_3_0/D (DFFNQX1A12TR)         0.386 r           0.422        0.036
+z_reg_4_0/D (DFFNQX1A12TR)         0.385 r           0.422        0.036
+z_reg_0_0/D (DFFNQX1A12TR)         0.386 f           0.423        0.036
+z_reg_3_0/D (DFFNQX1A12TR)         0.385 f           0.422        0.036
+z_reg_3_0/D (DFFNQX1A12TR)         0.385 r           0.422        0.037
+z_reg_3_0/D (DFFNQX1A12TR)         0.385 f           0.422        0.037
+z_reg_3_0/D (DFFNQX1A12TR)         0.384 f           0.422        0.038
+z_reg_3_0/D (DFFNQX1A12TR)         0.384 f           0.422        0.038
+z_reg_3_0/D (DFFNQX1A12TR)         0.383 r           0.422        0.038
+z_reg_3_0/D (DFFNQX1A12TR)         0.383 f           0.422        0.039
+z_reg_0_0/D (DFFNQX1A12TR)         0.383 r           0.423        0.039
+z_reg_3_0/D (DFFNQX1A12TR)         0.383 f           0.422        0.039
+z_reg_3_0/D (DFFNQX1A12TR)         0.382 r           0.422        0.039
+z_reg_0_0/D (DFFNQX1A12TR)         0.383 r           0.423        0.040
+z_reg_3_0/D (DFFNQX1A12TR)         0.382 f           0.422        0.040
+z_reg_4_0/D (DFFNQX1A12TR)         0.382 r           0.422        0.040
+z_reg_3_0/D (DFFNQX1A12TR)         0.382 r           0.422        0.040
+z_reg_3_0/D (DFFNQX1A12TR)         0.382 f           0.422        0.040
+z_reg_3_0/D (DFFNQX1A12TR)         0.382 f           0.422        0.040
+z_reg_3_0/D (DFFNQX1A12TR)         0.382 f           0.422        0.040
+z_reg_3_0/D (DFFNQX1A12TR)         0.381 r           0.422        0.041
+z_reg_4_0/D (DFFNQX1A12TR)         0.381 f           0.422        0.041
+z_reg_3_0/D (DFFNQX1A12TR)         0.381 r           0.422        0.041
+z_reg_3_0/D (DFFNQX1A12TR)         0.381 r           0.422        0.041
+z_reg_3_0/D (DFFNQX1A12TR)         0.381 f           0.422        0.041
+z_reg_0_0/D (DFFNQX1A12TR)         0.382 f           0.423        0.041
+z_reg_3_0/D (DFFNQX1A12TR)         0.381 f           0.422        0.041
+z_reg_3_0/D (DFFNQX1A12TR)         0.381 f           0.422        0.041
+z_reg_3_0/D (DFFNQX1A12TR)         0.381 f           0.422        0.041
+z_reg_4_0/D (DFFNQX1A12TR)         0.380 f           0.422        0.041
+z_reg_3_0/D (DFFNQX1A12TR)         0.380 f           0.422        0.041
+z_reg_0_0/D (DFFNQX1A12TR)         0.381 f           0.423        0.041
+z_reg_3_0/D (DFFNQX1A12TR)         0.380 r           0.422        0.042
+z_reg_4_0/D (DFFNQX1A12TR)         0.380 f           0.422        0.042
+z_reg_3_0/D (DFFNQX1A12TR)         0.380 f           0.422        0.042
+z_reg_3_0/D (DFFNQX1A12TR)         0.380 r           0.422        0.042
+z_reg_3_0/D (DFFNQX1A12TR)         0.380 r           0.422        0.042
+z_reg_3_0/D (DFFNQX1A12TR)         0.378 f           0.422        0.044
+z_reg_0_0/D (DFFNQX1A12TR)         0.378 f           0.423        0.044
+z_reg_0_0/D (DFFNQX1A12TR)         0.379 r           0.423        0.044
+z_reg_0_0/D (DFFNQX1A12TR)         0.378 f           0.423        0.044
+z_reg_3_0/D (DFFNQX1A12TR)         0.377 r           0.422        0.044
+z_reg_3_0/D (DFFNQX1A12TR)         0.377 r           0.422        0.044
+z_reg_0_0/D (DFFNQX1A12TR)         0.378 r           0.423        0.045
+z_reg_0_0/D (DFFNQX1A12TR)         0.378 r           0.423        0.045
+z_reg_3_0/D (DFFNQX1A12TR)         0.377 r           0.422        0.045
+z_reg_3_0/D (DFFNQX1A12TR)         0.377 f           0.422        0.045
+z_reg_3_0/D (DFFNQX1A12TR)         0.377 f           0.422        0.045
+z_reg_3_0/D (DFFNQX1A12TR)         0.377 r           0.422        0.045
+z_reg_0_0/D (DFFNQX1A12TR)         0.378 f           0.423        0.045
+z_reg_0_0/D (DFFNQX1A12TR)         0.378 f           0.423        0.045
+z_reg_0_0/D (DFFNQX1A12TR)         0.378 f           0.423        0.045
+z_reg_4_0/D (DFFNQX1A12TR)         0.377 r           0.422        0.045
+z_reg_3_0/D (DFFNQX1A12TR)         0.377 r           0.422        0.045
+z_reg_3_0/D (DFFNQX1A12TR)         0.376 r           0.422        0.045
+z_reg_0_0/D (DFFNQX1A12TR)         0.377 f           0.423        0.046
+z_reg_0_0/D (DFFNQX1A12TR)         0.377 r           0.423        0.046
+z_reg_0_0/D (DFFNQX1A12TR)         0.377 r           0.423        0.046
+z_reg_3_0/D (DFFNQX1A12TR)         0.376 f           0.422        0.046
+z_reg_4_0/D (DFFNQX1A12TR)         0.376 r           0.422        0.046
+z_reg_0_0/D (DFFNQX1A12TR)         0.376 f           0.423        0.046
+z_reg_3_0/D (DFFNQX1A12TR)         0.375 r           0.422        0.047
+z_reg_3_0/D (DFFNQX1A12TR)         0.375 f           0.422        0.047
+z_reg_3_0/D (DFFNQX1A12TR)         0.374 r           0.422        0.048
+z_reg_3_0/D (DFFNQX1A12TR)         0.374 f           0.422        0.048
+z_reg_0_0/D (DFFNQX1A12TR)         0.374 r           0.423        0.048
+z_reg_0_0/D (DFFNQX1A12TR)         0.374 r           0.423        0.048
+z_reg_3_0/D (DFFNQX1A12TR)         0.373 f           0.422        0.048
+z_reg_3_0/D (DFFNQX1A12TR)         0.373 f           0.422        0.049
+z_reg_0_0/D (DFFNQX1A12TR)         0.374 r           0.423        0.049
+z_reg_0_0/D (DFFNQX1A12TR)         0.374 r           0.423        0.049
+z_reg_3_0/D (DFFNQX1A12TR)         0.372 f           0.422        0.049
+z_reg_3_0/D (DFFNQX1A12TR)         0.372 f           0.422        0.049
+z_reg_2_0/D (DFFNQX1A12TR)         0.370 r           0.420        0.050
+z_reg_1_0/D (DFFNQX1A12TR)         0.370 r           0.420        0.050
+z_reg_4_0/D (DFFNQX1A12TR)         0.372 f           0.422        0.050
+z_reg_4_0/D (DFFNQX1A12TR)         0.371 f           0.422        0.051
+z_reg_0_0/D (DFFNQX1A12TR)         0.370 f           0.423        0.052
+z_reg_0_0/D (DFFNQX1A12TR)         0.370 f           0.423        0.052
+z_reg_0_0/D (DFFNQX1A12TR)         0.369 f           0.423        0.053
+z_reg_0_0/D (DFFNQX1A12TR)         0.369 f           0.423        0.053
+z_reg_3_0/D (DFFNQX1A12TR)         0.368 r           0.422        0.054
+z_reg_3_0/D (DFFNQX1A12TR)         0.367 r           0.422        0.054
+z_reg_3_0/D (DFFNQX1A12TR)         0.366 r           0.422        0.055
+z_reg_3_0/D (DFFNQX1A12TR)         0.366 r           0.422        0.056
+z_reg_0_0/D (DFFNQX1A12TR)         0.365 r           0.423        0.057
+z_reg_0_0/D (DFFNQX1A12TR)         0.365 r           0.423        0.058
+z_reg_4_0/D (DFFNQX1A12TR)         0.363 r           0.422        0.058
+z_reg_3_0/D (DFFNQX1A12TR)         0.363 r           0.422        0.058
+z_reg_4_0/D (DFFNQX1A12TR)         0.363 r           0.422        0.059
+z_reg_4_0/D (DFFNQX1A12TR)         0.362 r           0.422        0.060
+z_reg_4_0/D (DFFNQX1A12TR)         0.362 r           0.422        0.060
+z_reg_4_0/D (DFFNQX1A12TR)         0.361 r           0.422        0.060
+z_reg_4_0/D (DFFNQX1A12TR)         0.360 r           0.422        0.061
+z_reg_3_0/D (DFFNQX1A12TR)         0.360 r           0.422        0.062
+z_reg_4_0/D (DFFNQX1A12TR)         0.359 r           0.422        0.062
+z_reg_0_0/D (DFFNQX1A12TR)         0.360 r           0.423        0.063
+z_reg_3_0/D (DFFNQX1A12TR)         0.359 r           0.422        0.063
+z_reg_3_0/D (DFFNQX1A12TR)         0.358 r           0.422        0.064
+z_reg_3_0/D (DFFNQX1A12TR)         0.358 r           0.422        0.064
+z_reg_3_0/D (DFFNQX1A12TR)         0.358 r           0.422        0.064
+z_reg_3_0/D (DFFNQX1A12TR)         0.358 f           0.422        0.064
+z_reg_4_0/D (DFFNQX1A12TR)         0.357 f           0.422        0.065
+z_reg_4_0/D (DFFNQX1A12TR)         0.356 f           0.422        0.066
+z_reg_0_0/D (DFFNQX1A12TR)         0.355 r           0.423        0.067
+z_reg_0_0/D (DFFNQX1A12TR)         0.355 r           0.423        0.067
+z_reg_4_0/D (DFFNQX1A12TR)         0.354 r           0.422        0.068
+z_reg_0_0/D (DFFNQX1A12TR)         0.354 r           0.423        0.068
+z_reg_0_0/D (DFFNQX1A12TR)         0.354 r           0.423        0.068
+z_reg_4_0/D (DFFNQX1A12TR)         0.353 r           0.422        0.069
+z_reg_0_0/D (DFFNQX1A12TR)         0.353 f           0.423        0.069
+z_reg_0_0/D (DFFNQX1A12TR)         0.353 r           0.423        0.070
+z_reg_0_0/D (DFFNQX1A12TR)         0.353 f           0.423        0.070
+z_reg_0_0/D (DFFNQX1A12TR)         0.352 r           0.423        0.071
+z_reg_0_0/D (DFFNQX1A12TR)         0.351 f           0.423        0.072
+z_reg_0_0/D (DFFNQX1A12TR)         0.350 r           0.423        0.072
+z_reg_0_0/D (DFFNQX1A12TR)         0.350 f           0.423        0.073
+z_reg_0_0/D (DFFNQX1A12TR)         0.350 r           0.423        0.073
+z_reg_4_0/D (DFFNQX1A12TR)         0.349 f           0.422        0.073
+z_reg_4_0/D (DFFNQX1A12TR)         0.348 f           0.422        0.074
+z_reg_4_0/D (DFFNQX1A12TR)         0.346 f           0.422        0.076
+z_reg_4_0/D (DFFNQX1A12TR)         0.345 f           0.422        0.077
+z_reg_0_0/D (DFFNQX1A12TR)         0.345 f           0.423        0.078
+z_reg_4_0/D (DFFNQX1A12TR)         0.344 f           0.422        0.078
+z_reg_0_0/D (DFFNQX1A12TR)         0.344 f           0.423        0.078
+z_reg_4_0/D (DFFNQX1A12TR)         0.343 f           0.422        0.079
+z_reg_0_0/D (DFFNQX1A12TR)         0.342 f           0.423        0.080
+z_reg_0_0/D (DFFNQX1A12TR)         0.342 f           0.423        0.081
+z_reg_4_0/D (DFFNQX1A12TR)         0.336 r           0.422        0.085
+z_reg_4_0/D (DFFNQX1A12TR)         0.335 r           0.422        0.086
+z_reg_4_0/D (DFFNQX1A12TR)         0.335 r           0.422        0.087
+z_reg_4_0/D (DFFNQX1A12TR)         0.334 r           0.422        0.088
+z_reg_0_0/D (DFFNQX1A12TR)         0.332 f           0.423        0.091
+z_reg_0_0/D (DFFNQX1A12TR)         0.331 f           0.423        0.092
+z_reg_0_0/D (DFFNQX1A12TR)         0.330 r           0.423        0.093
+z_reg_0_0/D (DFFNQX1A12TR)         0.329 r           0.423        0.093
+z_reg_0_0/D (DFFNQX1A12TR)         0.327 f           0.423        0.095
+z_reg_0_0/D (DFFNQX1A12TR)         0.327 r           0.423        0.095
+z_reg_0_0/D (DFFNQX1A12TR)         0.327 r           0.423        0.096
+z_reg_0_0/D (DFFNQX1A12TR)         0.327 r           0.423        0.096
+z_reg_0_0/D (DFFNQX1A12TR)         0.326 f           0.423        0.096
+z_reg_0_0/D (DFFNQX1A12TR)         0.326 r           0.423        0.097
+z_reg_4_0/D (DFFNQX1A12TR)         0.320 f           0.422        0.102
+z_reg_0_0/D (DFFNQX1A12TR)         0.320 f           0.423        0.102
+z_reg_4_0/D (DFFNQX1A12TR)         0.319 f           0.422        0.103
+z_reg_0_0/D (DFFNQX1A12TR)         0.319 r           0.423        0.103
+z_reg_4_0/D (DFFNQX1A12TR)         0.318 f           0.422        0.104
+z_reg_0_0/D (DFFNQX1A12TR)         0.318 f           0.423        0.104
+z_reg_4_0/D (DFFNQX1A12TR)         0.317 f           0.422        0.104
+z_reg_0_0/D (DFFNQX1A12TR)         0.318 r           0.423        0.105
+z_reg_0_0/D (DFFNQX1A12TR)         0.316 r           0.423        0.106
+z_reg_0_0/D (DFFNQX1A12TR)         0.315 r           0.423        0.108
+z_reg_0_0/D (DFFNQX1A12TR)         0.314 f           0.423        0.109
+z_reg_0_0/D (DFFNQX1A12TR)         0.312 f           0.423        0.111
+z_reg_0_0/D (DFFNQX1A12TR)         0.297 r           0.423        0.125
+z_reg_0_0/D (DFFNQX1A12TR)         0.296 r           0.423        0.127
+Z[4] (out)                         0.620 r           0.900        0.280
+Z[2] (out)                         0.620 r           0.900        0.280
+Z[3] (out)                         0.619 r           0.900        0.281
+Z[1] (out)                         0.609 r           0.900        0.291
+Z[0] (out)                         0.609 r           0.900        0.291
+Z[4] (out)                         0.608 f           0.900        0.292
+Z[2] (out)                         0.608 f           0.900        0.292
+Z[3] (out)                         0.607 f           0.900        0.293
+Z[1] (out)                         0.599 f           0.900        0.301
+Z[0] (out)                         0.599 f           0.900        0.301
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.455 f           0.908        0.453
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.455 f           0.908        0.453
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.455 f           0.908        0.453
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.455 f           0.908        0.453
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.455 f           0.908        0.453
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.455 f           0.908        0.453
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.455 f           0.908        0.453
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.455 f           0.908        0.453
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.449 f           0.908        0.459
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.449 f           0.908        0.459
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.449 f           0.908        0.459
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.449 f           0.908        0.459
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.449 f           0.908        0.459
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.449 f           0.908        0.459
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.449 f           0.908        0.459
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.449 f           0.908        0.459
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.457 f           0.919        0.462
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.457 f           0.919        0.462
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.444 f           0.908        0.464
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.444 f           0.908        0.464
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.444 f           0.908        0.464
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.444 f           0.908        0.464
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.444 f           0.908        0.464
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.444 f           0.908        0.464
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.444 f           0.908        0.464
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.444 f           0.908        0.464
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.450 f           0.919        0.469
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.450 f           0.919        0.469
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.438 f           0.908        0.470
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.438 f           0.908        0.470
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.438 f           0.908        0.470
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.438 f           0.908        0.470
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.438 f           0.908        0.470
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.438 f           0.908        0.470
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.438 f           0.908        0.470
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.438 f           0.908        0.470
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.438 f           0.908        0.470
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.438 f           0.908        0.470
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.438 f           0.908        0.470
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.438 f           0.908        0.470
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.438 f           0.908        0.470
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.438 f           0.908        0.470
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.438 f           0.908        0.470
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.438 f           0.908        0.470
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.446 f           0.919        0.473
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.446 f           0.919        0.473
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.440 f           0.919        0.479
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.440 f           0.919        0.479
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.439 f           0.919        0.480
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.439 f           0.919        0.480
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.427 f           0.908        0.481
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.427 f           0.908        0.481
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.427 f           0.908        0.481
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.427 f           0.908        0.481
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.427 f           0.908        0.481
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.427 f           0.908        0.481
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.427 f           0.908        0.481
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.427 f           0.908        0.481
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.425 f           0.908        0.483
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.425 f           0.908        0.483
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.425 f           0.908        0.483
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.425 f           0.908        0.483
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.425 f           0.908        0.483
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.425 f           0.908        0.483
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.425 f           0.908        0.483
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.425 f           0.908        0.483
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.419 f           0.908        0.489
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.419 f           0.908        0.489
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.419 f           0.908        0.489
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.419 f           0.908        0.489
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.419 f           0.908        0.489
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.419 f           0.908        0.489
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.419 f           0.908        0.489
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.419 f           0.908        0.489
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.428 f           0.919        0.491
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.428 f           0.919        0.491
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.427 f           0.919        0.492
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.427 f           0.919        0.492
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.421 f           0.919        0.498
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.421 f           0.919        0.498
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.408 f           0.908        0.500
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.408 f           0.908        0.500
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.408 f           0.908        0.500
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.408 f           0.908        0.500
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.408 f           0.908        0.500
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.408 f           0.908        0.500
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.408 f           0.908        0.500
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.408 f           0.908        0.500
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.409 f           0.919        0.510
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.409 f           0.919        0.510
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.404 r           0.917        0.513
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.404 r           0.917        0.513
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.404 r           0.917        0.513
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.404 r           0.917        0.513
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.404 r           0.917        0.513
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.404 r           0.917        0.513
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.404 r           0.917        0.513
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.404 r           0.917        0.513
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.401 r           0.917        0.516
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.401 r           0.917        0.516
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.401 r           0.917        0.516
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.401 r           0.917        0.516
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.401 r           0.917        0.516
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.401 r           0.917        0.516
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.401 r           0.917        0.516
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.401 r           0.917        0.516
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.401 r           0.917        0.516
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.401 r           0.917        0.516
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.401 r           0.917        0.516
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.401 r           0.917        0.516
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.401 r           0.917        0.516
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.401 r           0.917        0.516
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.401 r           0.917        0.516
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.401 r           0.917        0.516
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.405 r           0.925        0.520
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.405 r           0.925        0.520
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.396 r           0.917        0.521
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.396 r           0.917        0.521
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.396 r           0.917        0.521
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.396 r           0.917        0.521
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.396 r           0.917        0.521
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.396 r           0.917        0.521
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.396 r           0.917        0.521
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.396 r           0.917        0.521
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.402 r           0.925        0.523
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.402 r           0.925        0.523
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.402 r           0.925        0.523
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.402 r           0.925        0.523
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.393 r           0.917        0.524
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.393 r           0.917        0.524
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.393 r           0.917        0.524
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.393 r           0.917        0.524
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.393 r           0.917        0.524
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.393 r           0.917        0.524
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.393 r           0.917        0.524
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.393 r           0.917        0.524
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.393 r           0.917        0.524
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.393 r           0.917        0.524
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.393 r           0.917        0.524
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.393 r           0.917        0.524
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.393 r           0.917        0.524
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.393 r           0.917        0.524
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.393 r           0.917        0.524
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.393 r           0.917        0.524
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.397 r           0.925        0.528
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.397 r           0.925        0.528
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.394 r           0.925        0.531
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.394 r           0.925        0.531
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.394 r           0.925        0.531
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.394 r           0.925        0.531
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.377 r           0.917        0.540
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.377 r           0.917        0.540
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.377 r           0.917        0.540
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.377 r           0.917        0.540
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.377 r           0.917        0.540
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.377 r           0.917        0.540
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.377 r           0.917        0.540
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.377 r           0.917        0.540
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.374 r           0.917        0.543
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.374 r           0.917        0.543
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.374 r           0.917        0.543
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.374 r           0.917        0.543
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.374 r           0.917        0.543
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.374 r           0.917        0.543
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.374 r           0.917        0.543
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.374 r           0.917        0.543
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.374 r           0.917        0.543
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.374 r           0.917        0.543
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.374 r           0.917        0.543
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.374 r           0.917        0.543
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.374 r           0.917        0.543
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.374 r           0.917        0.543
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.374 r           0.917        0.543
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.374 r           0.917        0.543
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.378 r           0.925        0.546
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.378 r           0.925        0.546
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.375 r           0.925        0.549
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.375 r           0.925        0.549
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.375 r           0.925        0.549
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.375 r           0.925        0.549
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.352 f           0.908        0.556
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.352 f           0.908        0.556
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.352 f           0.908        0.556
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.352 f           0.908        0.556
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.352 f           0.908        0.556
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.352 f           0.908        0.556
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.352 f           0.908        0.556
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.352 f           0.908        0.556
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.345 f           0.908        0.563
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.345 f           0.908        0.563
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.345 f           0.908        0.563
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.345 f           0.908        0.563
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.345 f           0.908        0.563
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.345 f           0.908        0.563
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.345 f           0.908        0.563
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.345 f           0.908        0.563
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.344 f           0.908        0.564
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.344 f           0.908        0.564
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.344 f           0.908        0.564
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.344 f           0.908        0.564
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.344 f           0.908        0.564
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.344 f           0.908        0.564
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.344 f           0.908        0.564
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.344 f           0.908        0.564
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.353 f           0.919        0.566
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.353 f           0.919        0.566
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.337 f           0.908        0.571
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.337 f           0.908        0.571
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.337 f           0.908        0.571
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.337 f           0.908        0.571
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.337 f           0.908        0.571
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.337 f           0.908        0.571
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.337 f           0.908        0.571
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.337 f           0.908        0.571
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.346 f           0.919        0.573
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.346 f           0.919        0.573
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.335 f           0.908        0.573
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.335 f           0.908        0.573
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.335 f           0.908        0.573
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.335 f           0.908        0.573
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.335 f           0.908        0.573
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.335 f           0.908        0.573
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.335 f           0.908        0.573
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.335 f           0.908        0.573
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.345 f           0.919        0.574
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.345 f           0.919        0.574
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.341 r           0.917        0.576
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.341 r           0.917        0.576
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.341 r           0.917        0.576
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.341 r           0.917        0.576
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.341 r           0.917        0.576
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.341 r           0.917        0.576
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.341 r           0.917        0.576
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.341 r           0.917        0.576
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.340 r           0.917        0.577
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.340 r           0.917        0.577
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.340 r           0.917        0.577
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.340 r           0.917        0.577
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.340 r           0.917        0.577
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.340 r           0.917        0.577
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.340 r           0.917        0.577
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.340 r           0.917        0.577
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.339 r           0.917        0.578
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.339 r           0.917        0.578
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.339 r           0.917        0.578
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.339 r           0.917        0.578
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.339 r           0.917        0.578
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.339 r           0.917        0.578
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.339 r           0.917        0.578
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.339 r           0.917        0.578
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.338 f           0.919        0.581
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.338 f           0.919        0.581
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.327 f           0.908        0.582
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.327 f           0.908        0.582
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.327 f           0.908        0.582
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.327 f           0.908        0.582
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.327 f           0.908        0.582
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.327 f           0.908        0.582
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.327 f           0.908        0.582
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.327 f           0.908        0.582
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.342 r           0.925        0.582
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.342 r           0.925        0.582
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.336 f           0.919        0.583
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.336 f           0.919        0.583
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.325 f           0.908        0.583
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.325 f           0.908        0.583
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.325 f           0.908        0.583
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.325 f           0.908        0.583
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.325 f           0.908        0.583
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.325 f           0.908        0.583
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.325 f           0.908        0.583
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.325 f           0.908        0.583
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.341 r           0.925        0.583
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.341 r           0.925        0.583
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.340 r           0.925        0.585
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.340 r           0.925        0.585
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.330 r           0.917        0.587
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.330 r           0.917        0.587
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.330 r           0.917        0.587
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.330 r           0.917        0.587
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.330 r           0.917        0.587
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.330 r           0.917        0.587
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.330 r           0.917        0.587
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.330 r           0.917        0.587
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.329 r           0.917        0.588
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.329 r           0.917        0.588
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.329 r           0.917        0.588
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.329 r           0.917        0.588
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.329 r           0.917        0.588
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.329 r           0.917        0.588
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.329 r           0.917        0.588
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.329 r           0.917        0.588
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.328 r           0.917        0.589
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.328 r           0.917        0.589
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.328 r           0.917        0.589
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.328 r           0.917        0.589
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.328 r           0.917        0.589
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.328 r           0.917        0.589
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.328 r           0.917        0.589
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.328 r           0.917        0.589
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.318 f           0.908        0.590
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.318 f           0.908        0.590
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.318 f           0.908        0.590
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.318 f           0.908        0.590
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.318 f           0.908        0.590
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.318 f           0.908        0.590
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.318 f           0.908        0.590
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.318 f           0.908        0.590
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.328 f           0.919        0.591
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.328 f           0.919        0.591
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.327 f           0.919        0.592
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.327 f           0.919        0.592
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.332 r           0.925        0.593
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.332 r           0.925        0.593
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.331 r           0.925        0.594
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.331 r           0.925        0.594
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.329 r           0.925        0.596
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.329 r           0.925        0.596
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.320 f           0.919        0.599
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.320 f           0.919        0.599
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.308 f           0.908        0.600
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.308 f           0.908        0.600
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.308 f           0.908        0.600
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.308 f           0.908        0.600
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.308 f           0.908        0.600
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.308 f           0.908        0.600
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.308 f           0.908        0.600
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.308 f           0.908        0.600
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.311 r           0.917        0.606
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.311 r           0.917        0.606
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.311 r           0.917        0.606
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.311 r           0.917        0.606
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.311 r           0.917        0.606
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.311 r           0.917        0.606
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.311 r           0.917        0.606
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.311 r           0.917        0.606
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.310 r           0.917        0.607
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.310 r           0.917        0.607
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.310 r           0.917        0.607
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.310 r           0.917        0.607
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.310 r           0.917        0.607
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.310 r           0.917        0.607
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.310 r           0.917        0.607
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.310 r           0.917        0.607
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.309 r           0.917        0.608
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.309 r           0.917        0.608
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.309 r           0.917        0.608
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.309 r           0.917        0.608
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.309 r           0.917        0.608
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.309 r           0.917        0.608
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.309 r           0.917        0.608
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.309 r           0.917        0.608
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.309 f           0.919        0.610
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.309 f           0.919        0.610
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.313 r           0.925        0.612
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.313 r           0.925        0.612
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.312 r           0.925        0.613
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.312 r           0.925        0.613
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.310 r           0.925        0.615
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.310 r           0.925        0.615
+z_reg_4_0/D (DFFNQX1A12TR)         0.739 r           1.422        0.682
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.221 f           0.908        0.687
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.221 f           0.908        0.687
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.220 f           0.908        0.688
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.220 f           0.908        0.688
+z_reg_0_0/D (DFFNQX1A12TR)         0.733 f           1.423        0.689
+z_reg_0_0/D (DFFNQX1A12TR)         0.733 f           1.423        0.689
+clk_gate_a_reg/latch/E (PREICGX0P5BA12TR)
+                                   0.163 r           0.854        0.691
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.215 f           0.908        0.693
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.215 f           0.908        0.693
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.214 f           0.908        0.694
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.214 f           0.908        0.694
+z_reg_4_0/D (DFFNQX1A12TR)         0.726 r           1.422        0.696
+z_reg_4_0/D (DFFNQX1A12TR)         0.726 f           1.422        0.696
+clock_r_REG1_S1/D (DFFQX0P5A12TR)
+                                   0.195 f           0.896        0.700
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.207 f           0.908        0.701
+clock_r_REG1_S1/D (DFFQX0P5A12TR)
+                                   0.194 f           0.896        0.702
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.207 f           0.908        0.702
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.205 f           0.908        0.703
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.205 f           0.908        0.703
+z_reg_4_0/D (DFFNQX1A12TR)         0.718 f           1.422        0.704
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.204 f           0.908        0.704
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.204 f           0.908        0.704
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.200 f           0.908        0.708
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.200 f           0.908        0.708
+z_reg_0_0/D (DFFNQX1A12TR)         0.714 r           1.423        0.709
+z_reg_0_0/D (DFFNQX1A12TR)         0.713 r           1.423        0.709
+z_reg_0_0/D (DFFNQX1A12TR)         0.711 r           1.423        0.711
+z_reg_0_0/D (DFFNQX1A12TR)         0.711 r           1.423        0.711
+z_reg_0_0/D (DFFNQX1A12TR)         0.711 f           1.423        0.712
+z_reg_0_0/D (DFFNQX1A12TR)         0.711 f           1.423        0.712
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.200 r           0.917        0.717
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.200 r           0.917        0.717
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.191 f           0.908        0.718
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.190 f           0.908        0.718
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.198 r           0.917        0.719
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.198 r           0.917        0.719
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.197 r           0.917        0.720
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.197 r           0.917        0.720
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.188 f           0.908        0.720
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.188 f           0.908        0.720
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.188 f           0.908        0.720
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.188 f           0.908        0.720
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.188 f           0.908        0.720
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.188 f           0.908        0.720
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.188 f           0.908        0.720
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.188 f           0.908        0.720
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.197 r           0.917        0.720
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.197 r           0.917        0.720
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.195 r           0.917        0.722
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.195 r           0.917        0.722
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.195 r           0.917        0.722
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.195 r           0.917        0.722
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.184 f           0.908        0.724
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.184 f           0.908        0.724
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.181 f           0.908        0.727
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.181 f           0.908        0.727
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.181 f           0.908        0.727
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.181 f           0.908        0.727
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.181 f           0.908        0.727
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.181 f           0.908        0.727
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.181 f           0.908        0.727
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.181 f           0.908        0.727
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.189 f           0.919        0.729
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.189 f           0.919        0.729
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.178 f           0.908        0.730
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.178 f           0.908        0.730
+clock_r_REG1_S1/D (DFFQX0P5A12TR)
+                                   0.180 r           0.911        0.731
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.185 r           0.917        0.732
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.185 r           0.917        0.732
+clock_r_REG1_S1/D (DFFQX0P5A12TR)
+                                   0.179 r           0.911        0.732
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.186 f           0.919        0.733
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.186 f           0.919        0.733
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.182 r           0.917        0.735
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.182 r           0.917        0.735
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.182 r           0.917        0.735
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.182 r           0.917        0.735
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.182 f           0.919        0.736
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.182 f           0.919        0.736
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.171 f           0.908        0.737
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.171 f           0.908        0.737
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.171 f           0.908        0.737
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.171 f           0.908        0.737
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.171 f           0.908        0.737
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.171 f           0.908        0.737
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.171 f           0.908        0.737
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.171 f           0.908        0.737
+clk_gate_a_reg/latch/E (PREICGX0P5BA12TR)
+                                   0.150 f           0.889        0.739
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.179 f           0.919        0.740
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.179 f           0.919        0.740
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.167 f           0.908        0.741
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.167 f           0.908        0.741
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.173 f           0.919        0.746
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.173 f           0.919        0.746
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.168 f           0.919        0.750
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.168 f           0.919        0.750
+z_reg_2_0/D (DFFNQX1A12TR)         0.663 r           1.420        0.757
+z_reg_1_0/D (DFFNQX1A12TR)         0.663 r           1.420        0.757
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.154 r           0.917        0.763
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.154 r           0.917        0.763
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.152 r           0.917        0.765
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.152 r           0.917        0.765
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.152 r           0.917        0.765
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.152 r           0.917        0.765
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.152 r           0.917        0.765
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.152 r           0.917        0.765
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.152 r           0.917        0.765
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.152 r           0.917        0.765
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.151 r           0.917        0.765
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.151 r           0.917        0.765
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.151 r           0.917        0.765
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.151 r           0.917        0.765
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.151 r           0.917        0.766
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.151 r           0.917        0.766
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.151 r           0.917        0.766
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.151 r           0.917        0.766
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.151 r           0.917        0.766
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.151 r           0.917        0.766
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.151 r           0.917        0.766
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.151 r           0.917        0.766
+clock_r_REG12_S2/D (DFFQX0P5A12TR)
+                                   0.150 r           0.917        0.767
+clock_r_REG11_S2/D (DFFQX0P5A12TR)
+                                   0.150 r           0.917        0.767
+clock_r_REG7_S2/D (DFFQX0P5A12TR)
+                                   0.150 r           0.917        0.767
+clock_r_REG6_S2/D (DFFQX0P5A12TR)
+                                   0.150 r           0.917        0.767
+clock_r_REG9_S2/D (DFFQX0P5A12TR)
+                                   0.150 r           0.917        0.767
+clock_r_REG4_S2/D (DFFQX0P5A12TR)
+                                   0.150 r           0.917        0.767
+clock_r_REG5_S2/D (DFFQX0P5A12TR)
+                                   0.150 r           0.917        0.767
+clock_r_REG10_S2/D (DFFQX0P5A12TR)
+                                   0.150 r           0.917        0.767
+z_reg_2_0/D (DFFNQX1A12TR)         0.653 f           1.420        0.767
+z_reg_1_0/D (DFFNQX1A12TR)         0.653 f           1.420        0.767
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.155 r           0.925        0.770
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.155 r           0.925        0.770
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.153 r           0.925        0.771
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.153 r           0.925        0.771
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.153 r           0.925        0.772
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.153 r           0.925        0.772
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.153 r           0.925        0.772
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.153 r           0.925        0.772
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.152 r           0.925        0.772
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.152 r           0.925        0.772
+clock_r_REG13_S2/D (DFFQX1A12TR)
+                                   0.151 r           0.925        0.774
+clock_r_REG8_S2/D (DFFQX1A12TR)    0.151 r           0.925        0.774
+clock_r_REG3_S1/D (DFFQX0P5A12TR)
+                                   0.131 f           0.915        0.785
+clock_r_REG2_S1/D (DFFQX1A12TR)    0.137 f           0.925        0.788
+clock_r_REG3_S1/D (DFFQX0P5A12TR)
+                                   0.130 r           0.920        0.790
+clock_r_REG2_S1/D (DFFQX1A12TR)    0.136 r           0.927        0.791
+clock_r_REG0_S1/D (DFFQX1A12TR)    0.131 f           0.927        0.796
+clock_r_REG0_S1/D (DFFQX1A12TR)    0.131 r           0.928        0.798
+
+1

@@ -1,0 +1,426 @@
+[05/08 19:57:02      0s] 
+[05/08 19:57:02      0s] Cadence Innovus(TM) Implementation System.
+[05/08 19:57:02      0s] Copyright 2020 Cadence Design Systems, Inc. All rights reserved worldwide.
+[05/08 19:57:02      0s] 
+[05/08 19:57:02      0s] Version:	v20.15-s105_1, built Tue Jul 27 14:15:35 PDT 2021
+[05/08 19:57:02      0s] Options:	
+[05/08 19:57:02      0s] Date:		Sun May  8 19:57:02 2022
+[05/08 19:57:02      0s] Host:		lnissrv4 (x86_64 w/Linux 4.18.0-348.20.1.el8_5.x86_64) (16cores*64cpus*Intel(R) Xeon(R) Gold 6142 CPU @ 2.60GHz 22528KB)
+[05/08 19:57:02      0s] OS:		Red Hat Enterprise Linux release 8.5 (Ootpa)
+[05/08 19:57:02      0s] 
+[05/08 19:57:02      0s] License:
+[05/08 19:57:03      0s] 		invs	Innovus Implementation System	20.1	checkout succeeded
+[05/08 19:57:03      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[05/08 19:57:17     12s] @(#)CDS: Innovus v20.15-s105_1 (64bit) 07/27/2021 14:15 (Linux 2.6.32-431.11.2.el6.x86_64)
+[05/08 19:57:17     12s] @(#)CDS: NanoRoute 20.15-s105_1 NR210726-1341/20_15-UB (database version 18.20.554) {superthreading v2.14}
+[05/08 19:57:17     12s] @(#)CDS: AAE 20.15-s020 (64bit) 07/27/2021 (Linux 2.6.32-431.11.2.el6.x86_64)
+[05/08 19:57:17     12s] @(#)CDS: CTE 20.15-s024_1 () Jul 23 2021 04:46:45 ( )
+[05/08 19:57:17     12s] @(#)CDS: SYNTECH 20.15-s012_1 () Jul 12 2021 23:29:38 ( )
+[05/08 19:57:17     12s] @(#)CDS: CPE v20.15-s071
+[05/08 19:57:17     12s] @(#)CDS: IQuantus/TQuantus 20.1.1-s460 (64bit) Fri Mar 5 18:46:16 PST 2021 (Linux 2.6.32-431.11.2.el6.x86_64)
+[05/08 19:57:17     12s] @(#)CDS: OA 22.60-p058 Tue Jun 15 18:38:04 2021
+[05/08 19:57:17     12s] @(#)CDS: SGN 20.10-d001 (01-Jun-2020) (64 bit executable, Qt5.9.0)
+[05/08 19:57:17     12s] @(#)CDS: RCDB 11.15.0
+[05/08 19:57:17     12s] @(#)CDS: STYLUS 20.10-p029_1 (06/24/2021 01:33 PDT)
+[05/08 19:57:17     12s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_1902063_lnissrv4_u1375766_P39haj.
+
+[05/08 19:57:17     12s] Change the soft stacksize limit to 0.2%RAM (1029 mbytes). Set global soft_stack_size_limit to change the value.
+[05/08 19:57:19     13s] 
+[05/08 19:57:19     13s] **INFO:  MMMC transition support version v31-84 
+[05/08 19:57:19     13s] 
+[05/08 19:57:19     13s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[05/08 19:57:19     13s] <CMD> suppressMessage ENCEXT-2799
+[05/08 19:57:19     13s] <CMD> win
+[05/08 19:58:03     15s] <CMD> set init_verilog ./design_files/nb_mult.dcopt.v
+[05/08 19:58:03     15s] <CMD> set init_top_cell nb_mult
+[05/08 19:58:03     15s] <CMD> set init_lef_file /home/ece6770/proj/innovus_files/cmos10sfrvt_a12_macros.lef
+[05/08 19:58:03     15s] <CMD> set init_pwr_net vdd!
+[05/08 19:58:03     15s] <CMD> set init_gnd_net vss!
+[05/08 19:58:03     15s] <CMD> set init_mmmc_file ./mmmc.tcl
+[05/08 19:58:03     15s] <CMD> init_design
+[05/08 19:58:03     15s] #% Begin Load MMMC data ... (date=05/08 19:58:03, mem=825.4M)
+[05/08 19:58:04     15s] #% End Load MMMC data ... (date=05/08 19:58:03, total cpu=0:00:00.0, real=0:00:01.0, peak res=826.2M, current mem=826.2M)
+[05/08 19:58:04     15s] 
+[05/08 19:58:04     15s] Loading LEF file /home/ece6770/proj/innovus_files/cmos10sfrvt_a12_macros.lef ...
+[05/08 19:58:04     15s] WARNING (LEFPARS-2007): NAMESCASESENSITIVE statement is obsolete in version 5.6 and later.
+[05/08 19:58:04     15s] The LEF parser will ignore this statement.
+[05/08 19:58:04     15s] To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file /home/ece6770/proj/innovus_files/cmos10sfrvt_a12_macros.lef at line 51.
+[05/08 19:58:04     15s] Set DBUPerIGU to M2 pitch 400.
+[05/08 19:58:04     15s] **WARN: (IMPLF-200):	Pin 'A' in macro 'ANTENNAA12TR' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/08 19:58:04     15s] Type 'man IMPLF-200' for more detail.
+[05/08 19:58:04     15s] 
+[05/08 19:58:04     15s] viaInitial starts at Sun May  8 19:58:04 2022
+viaInitial ends at Sun May  8 19:58:04 2022
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+[05/08 19:58:04     15s] Loading view definition file from ./mmmc.tcl
+[05/08 19:58:04     15s] Reading typical_lib timing library '/home/ece6770/s22/allen_boston/lab7/scadv12_cmos10sf_rvt_tt_1p0v_25c.lib' ...
+[05/08 19:58:05     17s] **WARN: (TECHLIB-302):	No function defined for cell 'FILLEGCAPTIE9A12TR'. The cell will only be used for analysis. (File /home/ece6770/s22/allen_boston/lab7/scadv12_cmos10sf_rvt_tt_1p0v_25c.lib)
+[05/08 19:58:05     17s] **WARN: (TECHLIB-302):	No function defined for cell 'FILLEGCAPTIE8A12TR'. The cell will only be used for analysis. (File /home/ece6770/s22/allen_boston/lab7/scadv12_cmos10sf_rvt_tt_1p0v_25c.lib)
+[05/08 19:58:05     17s] **WARN: (TECHLIB-302):	No function defined for cell 'FILLEGCAPTIE63A12TR'. The cell will only be used for analysis. (File /home/ece6770/s22/allen_boston/lab7/scadv12_cmos10sf_rvt_tt_1p0v_25c.lib)
+[05/08 19:58:05     17s] **WARN: (TECHLIB-302):	No function defined for cell 'FILLEGCAPTIE33A12TR'. The cell will only be used for analysis. (File /home/ece6770/s22/allen_boston/lab7/scadv12_cmos10sf_rvt_tt_1p0v_25c.lib)
+[05/08 19:58:05     17s] **WARN: (TECHLIB-302):	No function defined for cell 'FILLEGCAPTIE15A12TR'. The cell will only be used for analysis. (File /home/ece6770/s22/allen_boston/lab7/scadv12_cmos10sf_rvt_tt_1p0v_25c.lib)
+[05/08 19:58:05     17s] **WARN: (TECHLIB-302):	No function defined for cell 'FILLEGCAPTIE129A12TR'. The cell will only be used for analysis. (File /home/ece6770/s22/allen_boston/lab7/scadv12_cmos10sf_rvt_tt_1p0v_25c.lib)
+[05/08 19:58:05     17s] **WARN: (TECHLIB-302):	No function defined for cell 'FILLEGCAP9A12TR'. The cell will only be used for analysis. (File /home/ece6770/s22/allen_boston/lab7/scadv12_cmos10sf_rvt_tt_1p0v_25c.lib)
+[05/08 19:58:05     17s] **WARN: (TECHLIB-302):	No function defined for cell 'FILLEGCAP8A12TR'. The cell will only be used for analysis. (File /home/ece6770/s22/allen_boston/lab7/scadv12_cmos10sf_rvt_tt_1p0v_25c.lib)
+[05/08 19:58:05     17s] **WARN: (TECHLIB-302):	No function defined for cell 'FILLEGCAP63A12TR'. The cell will only be used for analysis. (File /home/ece6770/s22/allen_boston/lab7/scadv12_cmos10sf_rvt_tt_1p0v_25c.lib)
+[05/08 19:58:05     17s] **WARN: (TECHLIB-302):	No function defined for cell 'FILLEGCAP33A12TR'. The cell will only be used for analysis. (File /home/ece6770/s22/allen_boston/lab7/scadv12_cmos10sf_rvt_tt_1p0v_25c.lib)
+[05/08 19:58:05     17s] **WARN: (TECHLIB-302):	No function defined for cell 'FILLEGCAP15A12TR'. The cell will only be used for analysis. (File /home/ece6770/s22/allen_boston/lab7/scadv12_cmos10sf_rvt_tt_1p0v_25c.lib)
+[05/08 19:58:05     17s] **WARN: (TECHLIB-302):	No function defined for cell 'FILLEGCAP129A12TR'. The cell will only be used for analysis. (File /home/ece6770/s22/allen_boston/lab7/scadv12_cmos10sf_rvt_tt_1p0v_25c.lib)
+[05/08 19:58:05     17s] **WARN: (TECHLIB-302):	No function defined for cell 'FILLDGCAPTIE9A12TR'. The cell will only be used for analysis. (File /home/ece6770/s22/allen_boston/lab7/scadv12_cmos10sf_rvt_tt_1p0v_25c.lib)
+[05/08 19:58:05     17s] **WARN: (TECHLIB-302):	No function defined for cell 'FILLDGCAPTIE8A12TR'. The cell will only be used for analysis. (File /home/ece6770/s22/allen_boston/lab7/scadv12_cmos10sf_rvt_tt_1p0v_25c.lib)
+[05/08 19:58:05     17s] **WARN: (TECHLIB-302):	No function defined for cell 'FILLDGCAPTIE65A12TR'. The cell will only be used for analysis. (File /home/ece6770/s22/allen_boston/lab7/scadv12_cmos10sf_rvt_tt_1p0v_25c.lib)
+[05/08 19:58:05     17s] **WARN: (TECHLIB-302):	No function defined for cell 'FILLDGCAPTIE33A12TR'. The cell will only be used for analysis. (File /home/ece6770/s22/allen_boston/lab7/scadv12_cmos10sf_rvt_tt_1p0v_25c.lib)
+[05/08 19:58:05     17s] **WARN: (TECHLIB-302):	No function defined for cell 'FILLDGCAPTIE17A12TR'. The cell will only be used for analysis. (File /home/ece6770/s22/allen_boston/lab7/scadv12_cmos10sf_rvt_tt_1p0v_25c.lib)
+[05/08 19:58:05     17s] **WARN: (TECHLIB-302):	No function defined for cell 'FILLDGCAPTIE129A12TR'. The cell will only be used for analysis. (File /home/ece6770/s22/allen_boston/lab7/scadv12_cmos10sf_rvt_tt_1p0v_25c.lib)
+[05/08 19:58:05     17s] **WARN: (TECHLIB-302):	No function defined for cell 'FILLDGCAP9A12TR'. The cell will only be used for analysis. (File /home/ece6770/s22/allen_boston/lab7/scadv12_cmos10sf_rvt_tt_1p0v_25c.lib)
+[05/08 19:58:05     17s] **WARN: (TECHLIB-302):	No function defined for cell 'FILLDGCAP8A12TR'. The cell will only be used for analysis. (File /home/ece6770/s22/allen_boston/lab7/scadv12_cmos10sf_rvt_tt_1p0v_25c.lib)
+[05/08 19:58:05     17s] Message <TECHLIB-302> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit.
+[05/08 19:58:05     17s] Read 902 cells in library 'scadv12_cmos10sf_rvt_tt_1p0v_25c' 
+[05/08 19:58:05     17s] Ending "PreSetAnalysisView" (total cpu=0:00:01.5, real=0:00:01.0, peak res=951.0M, current mem=856.9M)
+[05/08 19:58:05     17s] *** End library_loading (cpu=0.02min, real=0.02min, mem=58.5M, fe_cpu=0.29min, fe_real=1.05min, fe_mem=835.0M) ***
+[05/08 19:58:05     17s] #% Begin Load netlist data ... (date=05/08 19:58:05, mem=856.0M)
+[05/08 19:58:05     17s] *** Begin netlist parsing (mem=835.0M) ***
+[05/08 19:58:05     17s] Created 902 new cells from 1 timing libraries.
+[05/08 19:58:05     17s] Reading netlist ...
+[05/08 19:58:05     17s] Backslashed names will retain backslash and a trailing blank character.
+[05/08 19:58:05     17s] Reading verilog netlist './design_files/nb_mult.dcopt.v'
+[05/08 19:58:05     17s] 
+[05/08 19:58:05     17s] *** Memory Usage v#1 (Current mem = 835.004M, initial mem = 298.191M) ***
+[05/08 19:58:05     17s] *** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=835.0M) ***
+[05/08 19:58:05     17s] #% End Load netlist data ... (date=05/08 19:58:05, total cpu=0:00:00.0, real=0:00:00.0, peak res=878.0M, current mem=878.0M)
+[05/08 19:58:05     17s] Set top cell to nb_mult.
+[05/08 19:58:05     17s] Hooked 902 DB cells to tlib cells.
+[05/08 19:58:05     17s] Ending "BindLib:" (total cpu=0:00:00.1, real=0:00:00.0, peak res=891.0M, current mem=891.0M)
+[05/08 19:58:05     17s] Starting recursive module instantiation check.
+[05/08 19:58:05     17s] No recursion found.
+[05/08 19:58:05     17s] Building hierarchical netlist for Cell nb_mult ...
+[05/08 19:58:05     17s] *** Netlist is unique.
+[05/08 19:58:05     17s] Set DBUPerIGU to techSite cmos10sfadv12 width 500.
+[05/08 19:58:05     17s] Setting Std. cell height to 4800 DBU (smallest netlist inst).
+[05/08 19:58:05     17s] ** info: there are 923 modules.
+[05/08 19:58:05     17s] ** info: there are 63 stdCell insts.
+[05/08 19:58:05     17s] 
+[05/08 19:58:05     17s] *** Memory Usage v#1 (Current mem = 875.418M, initial mem = 298.191M) ***
+[05/08 19:58:05     17s] Start create_tracks
+[05/08 19:58:05     17s] Set Default Net Delay as 1000 ps.
+[05/08 19:58:05     17s] Set Default Net Load as 0.5 pF. 
+[05/08 19:58:05     17s] Set Default Input Pin Transition as 0.1 ps.
+[05/08 19:58:06     17s] Extraction setup Started 
+[05/08 19:58:06     17s] 
+[05/08 19:58:06     17s] Trim Metal Layers:
+[05/08 19:58:06     17s] Initializing multi-corner RC extraction with 1 active RC Corners ...
+[05/08 19:58:06     17s] **WARN: (IMPEXT-2773):	The via resistance between layers M0 and M1 could not be determined from the LEF technology file because the via resistance specification is missing. A default of 4 Ohms will be used as via resistance between these layers.
+[05/08 19:58:06     17s] Type 'man IMPEXT-2773' for more detail.
+[05/08 19:58:06     17s] **WARN: (IMPEXT-2773):	The via resistance between layers M1 and M2 could not be determined from the LEF technology file because the via resistance specification is missing. A default of 4 Ohms will be used as via resistance between these layers.
+[05/08 19:58:06     17s] Type 'man IMPEXT-2773' for more detail.
+[05/08 19:58:06     17s] **WARN: (IMPEXT-2773):	The via resistance between layers M2 and M3 could not be determined from the LEF technology file because the via resistance specification is missing. A default of 4 Ohms will be used as via resistance between these layers.
+[05/08 19:58:06     17s] Type 'man IMPEXT-2773' for more detail.
+[05/08 19:58:06     17s] **WARN: (IMPEXT-2773):	The via resistance between layers M3 and M4 could not be determined from the LEF technology file because the via resistance specification is missing. A default of 4 Ohms will be used as via resistance between these layers.
+[05/08 19:58:06     17s] Type 'man IMPEXT-2773' for more detail.
+[05/08 19:58:06     17s] **WARN: (IMPEXT-2773):	The via resistance between layers M4 and M5 could not be determined from the LEF technology file because the via resistance specification is missing. A default of 4 Ohms will be used as via resistance between these layers.
+[05/08 19:58:06     17s] Type 'man IMPEXT-2773' for more detail.
+[05/08 19:58:06     17s] **WARN: (IMPEXT-2773):	The via resistance between layers M5 and M6 could not be determined from the LEF technology file because the via resistance specification is missing. A default of 4 Ohms will be used as via resistance between these layers.
+[05/08 19:58:06     17s] Type 'man IMPEXT-2773' for more detail.
+[05/08 19:58:06     17s] **WARN: (IMPEXT-2773):	The via resistance between layers M6 and M7 could not be determined from the LEF technology file because the via resistance specification is missing. A default of 4 Ohms will be used as via resistance between these layers.
+[05/08 19:58:06     17s] Type 'man IMPEXT-2773' for more detail.
+[05/08 19:58:06     17s] **WARN: (IMPEXT-2773):	The via resistance between layers M7 and M8 could not be determined from the LEF technology file because the via resistance specification is missing. A default of 4 Ohms will be used as via resistance between these layers.
+[05/08 19:58:06     17s] Type 'man IMPEXT-2773' for more detail.
+[05/08 19:58:06     17s] **WARN: (IMPEXT-2766):	The sheet resistance for layer M1 is not defined in the cap table. Therefore, the LEF value 0.229 will be used instead. To avoid this message, update the relevant cap table to include the sheet resistance for the specified layer and read it back in.
+[05/08 19:58:06     17s] **WARN: (IMPEXT-2766):	The sheet resistance for layer M2 is not defined in the cap table. Therefore, the LEF value 0.1649 will be used instead. To avoid this message, update the relevant cap table to include the sheet resistance for the specified layer and read it back in.
+[05/08 19:58:06     17s] **WARN: (IMPEXT-2766):	The sheet resistance for layer M3 is not defined in the cap table. Therefore, the LEF value 0.1649 will be used instead. To avoid this message, update the relevant cap table to include the sheet resistance for the specified layer and read it back in.
+[05/08 19:58:06     17s] **WARN: (IMPEXT-2766):	The sheet resistance for layer M4 is not defined in the cap table. Therefore, the LEF value 0.1649 will be used instead. To avoid this message, update the relevant cap table to include the sheet resistance for the specified layer and read it back in.
+[05/08 19:58:06     17s] **WARN: (IMPEXT-2766):	The sheet resistance for layer M5 is not defined in the cap table. Therefore, the LEF value 0.0752 will be used instead. To avoid this message, update the relevant cap table to include the sheet resistance for the specified layer and read it back in.
+[05/08 19:58:06     17s] **WARN: (IMPEXT-2766):	The sheet resistance for layer M6 is not defined in the cap table. Therefore, the LEF value 0.0752 will be used instead. To avoid this message, update the relevant cap table to include the sheet resistance for the specified layer and read it back in.
+[05/08 19:58:06     17s] **WARN: (IMPEXT-2766):	The sheet resistance for layer M7 is not defined in the cap table. Therefore, the LEF value 0.0752 will be used instead. To avoid this message, update the relevant cap table to include the sheet resistance for the specified layer and read it back in.
+[05/08 19:58:06     17s] **WARN: (IMPEXT-2766):	The sheet resistance for layer M8 is not defined in the cap table. Therefore, the LEF value 0.0275 will be used instead. To avoid this message, update the relevant cap table to include the sheet resistance for the specified layer and read it back in.
+[05/08 19:58:06     17s] Summary of Active RC-Corners : 
+[05/08 19:58:06     17s]  
+[05/08 19:58:06     17s]  Analysis View: typical_view
+[05/08 19:58:06     17s]     RC-Corner Name        : typical_rc
+[05/08 19:58:06     17s]     RC-Corner Index       : 0
+[05/08 19:58:06     17s]     RC-Corner Temperature : 25 Celsius
+[05/08 19:58:06     17s]     RC-Corner Cap Table   : ''
+[05/08 19:58:06     17s]     RC-Corner PreRoute Res Factor         : 1
+[05/08 19:58:06     17s]     RC-Corner PreRoute Cap Factor         : 1
+[05/08 19:58:06     17s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[05/08 19:58:06     17s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[05/08 19:58:06     17s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[05/08 19:58:06     17s]     RC-Corner PreRoute Clock Res Factor   : 1
+[05/08 19:58:06     17s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from Cap Table]
+[05/08 19:58:06     17s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[05/08 19:58:06     17s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[05/08 19:58:06     17s] 
+[05/08 19:58:06     17s] Trim Metal Layers:
+[05/08 19:58:06     17s] LayerId::1 widthSet size::1
+[05/08 19:58:06     17s] LayerId::2 widthSet size::1
+[05/08 19:58:06     17s] LayerId::3 widthSet size::1
+[05/08 19:58:06     17s] LayerId::4 widthSet size::1
+[05/08 19:58:06     17s] LayerId::5 widthSet size::1
+[05/08 19:58:06     17s] LayerId::6 widthSet size::1
+[05/08 19:58:06     17s] LayerId::7 widthSet size::1
+[05/08 19:58:06     17s] LayerId::8 widthSet size::1
+[05/08 19:58:06     17s] Updating RC grid for preRoute extraction ...
+[05/08 19:58:06     17s] eee: pegSigSF::1.070000
+[05/08 19:58:06     17s] Initializing multi-corner resistance tables ...
+[05/08 19:58:06     17s] eee: l::1 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/08 19:58:06     17s] eee: l::2 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/08 19:58:06     17s] eee: l::3 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/08 19:58:06     17s] eee: l::4 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/08 19:58:06     17s] eee: l::5 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/08 19:58:06     17s] eee: l::6 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/08 19:58:06     17s] eee: l::7 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/08 19:58:06     17s] eee: l::8 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/08 19:58:06     17s] {RT typical_rc 0 8 8 {5 0} {7 0} 2}
+[05/08 19:58:06     17s] Preroute length aware model : n: 40 ; LLS: 2-3 ; HLS: 3-5 ; rDens: 0.000000 ; uaWl: 0.000000 ; uaWlH: 0.000000 ; aWlH: 0.000000 ; Pmax: 0.850000 ; wcR: 0.000000 ; newSi: 0.000000 ; pMod: 82 ; 
+[05/08 19:58:06     17s] *Info: initialize multi-corner CTS.
+[05/08 19:58:06     17s] Ending "SetAnalysisView" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1127.8M, current mem=904.2M)
+[05/08 19:58:06     17s] Reading timing constraints file '../pnr/design_files/nb_mult.dcopt.sdc' ...
+[05/08 19:58:06     17s] Current (total cpu=0:00:18.0, real=0:01:04, peak res=1137.9M, current mem=1137.9M)
+[05/08 19:58:06     17s] **WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ../pnr/design_files/nb_mult.dcopt.sdc, Line 9).
+[05/08 19:58:06     17s] 
+[05/08 19:58:06     17s] **WARN: (TCLCMD-1013):	The SDC set_operating_conditions assertion is not supported. Please use the Innovus setOpCond command to specify library and operating condition information. Use the setAnalysisMode command to control single vs. bestCase/worstCase vs. on-chip variation timing analysis. (File ../pnr/design_files/nb_mult.dcopt.sdc, Line 10).
+[05/08 19:58:06     17s] 
+[05/08 19:58:06     17s] INFO (CTE): Reading of timing constraints file ../pnr/design_files/nb_mult.dcopt.sdc completed, with 2 WARNING
+[05/08 19:58:06     18s] Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:00.0, peak res=1158.2M, current mem=1158.2M)
+[05/08 19:58:06     18s] Current (total cpu=0:00:18.0, real=0:01:04, peak res=1158.2M, current mem=1158.2M)
+[05/08 19:58:06     18s] Tech dependent Parameter, Build TLibAnalyzer for: cellAreaConsiderPadding
+[05/08 19:58:06     18s] 
+[05/08 19:58:06     18s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) Begin ...
+[05/08 19:58:06     18s] Summary for sequential cells identification: 
+[05/08 19:58:06     18s]   Identified SBFF number: 148
+[05/08 19:58:06     18s]   Identified MBFF number: 0
+[05/08 19:58:06     18s]   Identified SB Latch number: 0
+[05/08 19:58:06     18s]   Identified MB Latch number: 0
+[05/08 19:58:06     18s]   Not identified SBFF number: 0
+[05/08 19:58:06     18s]   Not identified MBFF number: 0
+[05/08 19:58:06     18s]   Not identified SB Latch number: 0
+[05/08 19:58:06     18s]   Not identified MB Latch number: 0
+[05/08 19:58:06     18s]   Number of sequential cells which are not FFs: 106
+[05/08 19:58:06     18s] Total number of combinational cells: 639
+[05/08 19:58:06     18s] Total number of sequential cells: 254
+[05/08 19:58:06     18s] Total number of tristate cells: 9
+[05/08 19:58:06     18s] Total number of level shifter cells: 0
+[05/08 19:58:06     18s] Total number of power gating cells: 0
+[05/08 19:58:06     18s] Total number of isolation cells: 0
+[05/08 19:58:06     18s] Total number of power switch cells: 0
+[05/08 19:58:06     18s] Total number of pulse generator cells: 0
+[05/08 19:58:06     18s] Total number of always on buffers: 0
+[05/08 19:58:06     18s] Total number of retention cells: 0
+[05/08 19:58:06     18s] List of usable buffers: FRICGX0P5BA12TR FRICGX0P6BA12TR FRICGX0P8BA12TR FRICGX0P7BA12TR FRICGX11BA12TR FRICGX13BA12TR FRICGX16BA12TR FRICGX1BA12TR FRICGX1P2BA12TR FRICGX1P4BA12TR FRICGX2BA12TR FRICGX1P7BA12TR FRICGX3BA12TR FRICGX2P5BA12TR FRICGX4BA12TR FRICGX3P5BA12TR FRICGX5BA12TR FRICGX6BA12TR FRICGX7P5BA12TR FRICGX9BA12TR BUFHX0P8A12TR BUFHX0P7A12TR BUFHX11A12TR BUFHX13A12TR BUFHX16A12TR BUFHX1A12TR BUFHX1P4A12TR BUFHX1P2A12TR BUFHX2A12TR BUFHX1P7A12TR BUFHX3A12TR BUFHX2P5A12TR BUFHX4A12TR BUFHX3P5A12TR BUFHX5A12TR BUFHX6A12TR BUFHX7P5A12TR BUFHX9A12TR BUFX0P7A12TR BUFX0P7BA12TR BUFX0P8BA12TR BUFX0P8A12TR BUFX11BA12TR BUFX11A12TR BUFX13BA12TR BUFX13A12TR BUFX16A12TR BUFX16BA12TR BUFX1A12TR BUFX1BA12TR BUFX1P2A12TR BUFX1P2BA12TR BUFX1P4A12TR BUFX1P4BA12TR BUFX1P7A12TR BUFX1P7BA12TR BUFX2BA12TR BUFX2A12TR BUFX2P5A12TR BUFX3BA12TR BUFX2P5BA12TR BUFX3A12TR BUFX3P5A12TR BUFX3P5BA12TR BUFX4BA12TR BUFX4A12TR BUFX5BA12TR BUFX5A12TR BUFX6BA12TR BUFX6A12TR BUFX7P5BA12TR BUFX7P5A12TR BUFX9A12TR BUFX9BA12TR DLY2X0P5A12TR
+[05/08 19:58:06     18s] Total number of usable buffers: 75
+[05/08 19:58:06     18s] List of unusable buffers:
+[05/08 19:58:06     18s] Total number of unusable buffers: 0
+[05/08 19:58:06     18s] List of usable inverters: INVX0P5A12TR INVX0P5BA12TR INVX0P6A12TR INVX0P6BA12TR INVX0P7A12TR INVX0P7BA12TR INVX0P8BA12TR INVX0P8A12TR INVX11BA12TR INVX11A12TR INVX13BA12TR INVX13A12TR INVX16A12TR INVX16BA12TR INVX1A12TR INVX1BA12TR INVX1P2A12TR INVX1P2BA12TR INVX1P4A12TR INVX1P4BA12TR INVX1P7A12TR INVX1P7BA12TR INVX2BA12TR INVX2A12TR INVX2P5A12TR INVX2P5BA12TR INVX3BA12TR INVX3A12TR INVX3P5A12TR INVX3P5BA12TR INVX4BA12TR INVX4A12TR INVX5BA12TR INVX5A12TR INVX6BA12TR INVX6A12TR INVX7P5BA12TR INVX7P5A12TR INVX9BA12TR INVX9A12TR
+[05/08 19:58:06     18s] Total number of usable inverters: 40
+[05/08 19:58:06     18s] List of unusable inverters:
+[05/08 19:58:06     18s] Total number of unusable inverters: 0
+[05/08 19:58:06     18s] List of identified usable delay cells: DLY4X0P5A12TR
+[05/08 19:58:06     18s] Total number of identified usable delay cells: 1
+[05/08 19:58:06     18s] List of identified unusable delay cells:
+[05/08 19:58:06     18s] Total number of identified unusable delay cells: 0
+[05/08 19:58:06     18s] 
+[05/08 19:58:06     18s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) End ...
+[05/08 19:58:06     18s] 
+[05/08 19:58:06     18s] TimeStamp Deleting Cell Server Begin ...
+[05/08 19:58:06     18s] 
+[05/08 19:58:06     18s] TimeStamp Deleting Cell Server End ...
+[05/08 19:58:06     18s] Ending "Cell type marking" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1180.6M, current mem=1180.6M)
+[05/08 19:58:06     18s] 
+[05/08 19:58:06     18s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) Begin ...
+[05/08 19:58:06     18s] Summary for sequential cells identification: 
+[05/08 19:58:06     18s]   Identified SBFF number: 148
+[05/08 19:58:06     18s]   Identified MBFF number: 0
+[05/08 19:58:06     18s]   Identified SB Latch number: 0
+[05/08 19:58:06     18s]   Identified MB Latch number: 0
+[05/08 19:58:06     18s]   Not identified SBFF number: 0
+[05/08 19:58:06     18s]   Not identified MBFF number: 0
+[05/08 19:58:06     18s]   Not identified SB Latch number: 0
+[05/08 19:58:06     18s]   Not identified MB Latch number: 0
+[05/08 19:58:06     18s]   Number of sequential cells which are not FFs: 106
+[05/08 19:58:06     18s]  Visiting view : typical_view
+[05/08 19:58:06     18s]    : PowerDomain = none : Weighted F : unweighted  = 9.80 (1.000) with rcCorner = 0
+[05/08 19:58:06     18s]    : PowerDomain = none : Weighted F : unweighted  = 8.00 (1.000) with rcCorner = -1
+[05/08 19:58:06     18s]  Visiting view : typical_view
+[05/08 19:58:06     18s]    : PowerDomain = none : Weighted F : unweighted  = 9.80 (1.000) with rcCorner = 0
+[05/08 19:58:06     18s]    : PowerDomain = none : Weighted F : unweighted  = 8.00 (1.000) with rcCorner = -1
+[05/08 19:58:06     18s] TLC MultiMap info (StdDelay):
+[05/08 19:58:06     18s]   : typical_corner + typical_lib + 1 + no RcCorner := 8ps
+[05/08 19:58:06     18s]   : typical_corner + typical_lib + 1 + typical_rc := 9.8ps
+[05/08 19:58:06     18s]  Setting StdDelay to: 9.8ps
+[05/08 19:58:06     18s] 
+[05/08 19:58:06     18s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) End ...
+[05/08 19:58:06     18s] #% Begin Load MMMC data ... (date=05/08 19:58:06, mem=1181.1M)
+[05/08 19:58:06     18s] #% End Load MMMC data ... (date=05/08 19:58:06, total cpu=0:00:00.0, real=0:00:00.0, peak res=1181.1M, current mem=1181.1M)
+[05/08 19:58:06     18s] 
+[05/08 19:58:06     18s] *** Summary of all messages that are not suppressed in this session:
+[05/08 19:58:06     18s] Severity  ID               Count  Summary                                  
+[05/08 19:58:06     18s] WARNING   IMPLF-200            1  Pin '%s' in macro '%s' has no ANTENNAGAT...
+[05/08 19:58:06     18s] WARNING   IMPEXT-2766          8  The sheet resistance for layer %s is not...
+[05/08 19:58:06     18s] WARNING   IMPEXT-2773          8  The via resistance between layers %s and...
+[05/08 19:58:06     18s] WARNING   TCLCMD-1013          1  The SDC set_operating_conditions asserti...
+[05/08 19:58:06     18s] WARNING   TCLCMD-1461          1  Skipped unsupported command: %s          
+[05/08 19:58:06     18s] WARNING   TECHLIB-302         35  No function defined for cell '%s'. The c...
+[05/08 19:58:06     18s] *** Message Summary: 54 warning(s), 0 error(s)
+[05/08 19:58:06     18s] 
+[05/08 19:58:06     18s] <CMD> setDrawView fplan
+[05/08 19:58:06     18s] <CMD> floorPlan -r 0.5 0.7 12 12 12 12
+[05/08 19:58:06     18s] Start create_tracks
+[05/08 19:58:06     18s] **WARN: (IMPFP-325):	Floorplan of the design is resized. All current floorplan objects are automatically derived based on specified new floorplan. This may change blocks, fixed standard cells, existing routes and blockages.
+[05/08 19:58:06     18s] <CMD> addRing -nets {vdd! vss!} -type core_rings -around user_defined -center 1 -spacing 1.8 -width 4.6 -offset 0 -threshold auto -layer {bottom BD top BD right LB left LB}
+[05/08 19:58:06     18s] #% Begin addRing (date=05/08 19:58:06, mem=1184.3M)
+[05/08 19:58:06     18s] 
+[05/08 19:58:06     18s] Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1151.3M)
+[05/08 19:58:06     18s] Ring generation is complete.
+[05/08 19:58:06     18s] vias are now being generated.
+[05/08 19:58:06     18s] addRing created 8 wires.
+[05/08 19:58:06     18s] ViaGen created 8 vias, deleted 0 via to avoid violation.
+[05/08 19:58:06     18s] +--------+----------------+----------------+
+[05/08 19:58:06     18s] |  Layer |     Created    |     Deleted    |
+[05/08 19:58:06     18s] +--------+----------------+----------------+
+[05/08 19:58:06     18s] |   BD   |        4       |       NA       |
+[05/08 19:58:06     18s] |   VV   |        8       |        0       |
+[05/08 19:58:06     18s] |   LB   |        4       |       NA       |
+[05/08 19:58:06     18s] +--------+----------------+----------------+
+[05/08 19:58:06     18s] #% End addRing (date=05/08 19:58:06, total cpu=0:00:00.0, real=0:00:00.0, peak res=1187.7M, current mem=1187.7M)
+[05/08 19:58:06     18s] <CMD> addStripe -nets {vdd! vss!} -direction vertical -layer LB -width 4.8 -spacing 1.8 -xleft_offset 80 -set_to_set_distance 132 -block_ring_top_layer_limit LB -block_ring_bottom_layer_limit M1 -padcore_ring_bottom_layer_limit M1 -padcore_ring_top_layer_limit LB -stacked_via_top_layer LB -stacked_via_bottom_layer M1 -merge_stripes_value 10 -max_same_layer_jog_length 2.0 -snap_wire_center_to_grid Grid
+[05/08 19:58:06     18s] #% Begin addStripe (date=05/08 19:58:06, mem=1187.7M)
+[05/08 19:58:06     18s] **WARN: (IMPPP-4022):	Option "-xleft_offset" is obsolete and has been replaced by "-start_offset". The obsolete option still works in this release, but to avoid this warning and to ensure compatibility with future releases, update your script to use "-start_offset"..
+[05/08 19:58:06     18s] **WARN: (IMPPP-4022):	Option "-stacked_via_top_layer" is obsolete and has been replaced by "setAddStripeMode -stacked_via_top_layer". The obsolete option still works in this release, but to avoid this warning and to ensure compatibility with future releases, update your script to use "setAddStripeMode -stacked_via_top_layer layerName"..
+[05/08 19:58:06     18s] **WARN: (IMPPP-4022):	Option "-stacked_via_bottom_layer" is obsolete and has been replaced by "setAddStripeMode -stacked_via_bottom_layer". The obsolete option still works in this release, but to avoid this warning and to ensure compatibility with future releases, update your script to use "setAddStripeMode -stacked_via_bottom_layer layerName"..
+[05/08 19:58:06     18s] 
+[05/08 19:58:06     18s] Initialize fgc environment(mem: 1153.3M) ...  fail and won't use fgc to check drc(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1153.3M)
+[05/08 19:58:06     18s] Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1153.3M)
+[05/08 19:58:06     18s] Loading wires (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1153.3M)
+[05/08 19:58:06     18s] Loading via instances (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1153.3M)
+[05/08 19:58:06     18s] Starting stripe generation ...
+[05/08 19:58:06     18s] Non-Default Mode Option Settings :
+[05/08 19:58:06     18s]   NONE
+[05/08 19:58:06     18s] #% End addStripe (date=05/08 19:58:06, total cpu=0:00:00.0, real=0:00:00.0, peak res=1188.2M, current mem=1186.5M)
+[05/08 19:58:06     18s] <CMD> sroute -connect {blockPin padPin padRing corePin floatingStripe} -allowJogging true -allowLayerChange true -blockPin useLef -targetViaLayerRange {M1 LB}
+[05/08 19:58:06     18s] #% Begin sroute (date=05/08 19:58:06, mem=1186.5M)
+[05/08 19:58:06     18s] *** Begin SPECIAL ROUTE on Sun May  8 19:58:06 2022 ***
+[05/08 19:58:06     18s] SPECIAL ROUTE ran on directory: /research/ece/lnis/USERS/boston/CryptoHW/NB_multiplier/nb_mult/pnr
+[05/08 19:58:06     18s] SPECIAL ROUTE ran on machine: lnissrv4 (Linux 4.18.0-348.20.1.el8_5.x86_64 Xeon 3.70Ghz)
+[05/08 19:58:06     18s] 
+[05/08 19:58:06     18s] Begin option processing ...
+[05/08 19:58:06     18s] srouteConnectPowerBump set to false
+[05/08 19:58:06     18s] routeSpecial set to true
+[05/08 19:58:06     18s] srouteBlockPin set to "useLef"
+[05/08 19:58:06     18s] srouteBottomTargetLayerLimit set to 1
+[05/08 19:58:06     18s] srouteConnectConverterPin set to false
+[05/08 19:58:06     18s] srouteFollowCorePinEnd set to 3
+[05/08 19:58:06     18s] srouteJogControl set to "preferWithChanges differentLayer"
+[05/08 19:58:06     18s] sroutePadPinAllPorts set to true
+[05/08 19:58:06     18s] sroutePreserveExistingRoutes set to true
+[05/08 19:58:06     18s] srouteRoutePowerBarPortOnBothDir set to true
+[05/08 19:58:06     18s] srouteTopTargetLayerLimit set to 8
+[05/08 19:58:06     18s] End option processing: cpu: 0:00:00, real: 0:00:00, peak: 2333.00 megs.
+[05/08 19:58:06     18s] 
+[05/08 19:58:06     18s] Reading DB technology information...
+[05/08 19:58:06     18s] Finished reading DB technology information.
+[05/08 19:58:06     18s] Reading floorplan and netlist information...
+[05/08 19:58:06     18s] Finished reading floorplan and netlist information.
+[05/08 19:58:06     18s] 	199	639	2009	
+[05/08 19:58:06     18s] 199	200	300	500	
+[05/08 19:58:06     18s] 639	300	400	600	
+[05/08 19:58:06     18s] 2009	500	600	800	
+[05/08 19:58:07     18s] Read in 16 layers, 8 routing layers, 1 overlap layer
+[05/08 19:58:07     18s] Read in 1 nondefault rule, 0 used
+[05/08 19:58:07     18s] Read in 919 macros, 25 used
+[05/08 19:58:07     18s] Read in 24 components
+[05/08 19:58:07     18s]   24 core components: 24 unplaced, 0 placed, 0 fixed
+[05/08 19:58:07     18s] Read in 17 logical pins
+[05/08 19:58:07     18s] Read in 17 nets
+[05/08 19:58:07     18s] Read in 2 special nets, 2 routed
+[05/08 19:58:07     18s] Begin power routing ...
+[05/08 19:58:07     18s] #create default rule from bind_ndr_rule rule=0x7fce4d2c55b0 0x7fce33c7e018
+[05/08 19:58:07     19s] ### import design signature (1): route=1 flt_obj=0 vio=1905142130 swire=1 shield_wire=1 net_attr=1 dirty_area=0 del_dirty_area=0 cell=0 placement=0 pin_access=1 inst_pattern=1 halo=0
+[05/08 19:58:07     19s] **WARN: (IMPSR-1253):	Unable to find any standard cell pin connected to the vdd! net.
+[05/08 19:58:07     19s]  Run the globalNetConnect command or change the CPF file to ensure that the netlist reflects the correct power ground connections. The standard cell pins must be defined as 'USE POWER' or 'USE GROUND' for the connection.
+[05/08 19:58:07     19s] **WARN: (IMPSR-1254):	Unable to connect the specified objects, since block pins of the vdd! net were not found in the design. Check netlist or change the parameter value to include block pins in the design.
+[05/08 19:58:07     19s] **WARN: (IMPSR-1256):	Unable to find any CORE class pad pin of the vdd! net due to unavailability of the pin or check netlist in the routing area or layer. Change routing area or layer to include the expected pin or check netlist. Alternatively, change port class in the technology file.
+[05/08 19:58:07     19s] Type 'man IMPSR-1256' for more detail.
+[05/08 19:58:07     19s] Cannot find any AREAIO class pad pin of net vdd!. Check net list, or change port class in the technology file, or change option to include pin in given range.
+[05/08 19:58:07     19s] **WARN: (IMPSR-1253):	Unable to find any standard cell pin connected to the vss! net.
+[05/08 19:58:07     19s]  Run the globalNetConnect command or change the CPF file to ensure that the netlist reflects the correct power ground connections. The standard cell pins must be defined as 'USE POWER' or 'USE GROUND' for the connection.
+[05/08 19:58:07     19s] **WARN: (IMPSR-1254):	Unable to connect the specified objects, since block pins of the vss! net were not found in the design. Check netlist or change the parameter value to include block pins in the design.
+[05/08 19:58:07     19s] **WARN: (IMPSR-1256):	Unable to find any CORE class pad pin of the vss! net due to unavailability of the pin or check netlist in the routing area or layer. Change routing area or layer to include the expected pin or check netlist. Alternatively, change port class in the technology file.
+[05/08 19:58:07     19s] Type 'man IMPSR-1256' for more detail.
+[05/08 19:58:07     19s] Cannot find any AREAIO class pad pin of net vss!. Check net list, or change port class in the technology file, or change option to include pin in given range.
+[05/08 19:58:07     19s] **WARN: (IMPSR-468):	Cannot find any standard cell pin connected to net vdd!.
+[05/08 19:58:07     19s] Use setSrouteMode -corePinReferenceMacro <standard cell> to specify a reference macro for followpin connection, or run globalNetConnect command or change CPF file to make sure that the netlist reflects the correct power ground connections. The standard cell pins must be defined as "USE POWER" or "USE GROUND".
+[05/08 19:58:07     19s] **WARN: (IMPSR-468):	Cannot find any standard cell pin connected to net vdd!.
+[05/08 19:58:07     19s] Use setSrouteMode -corePinReferenceMacro <standard cell> to specify a reference macro for followpin connection, or run globalNetConnect command or change CPF file to make sure that the netlist reflects the correct power ground connections. The standard cell pins must be defined as "USE POWER" or "USE GROUND".
+[05/08 19:58:07     19s] **WARN: (IMPSR-468):	Cannot find any standard cell pin connected to net vss!.
+[05/08 19:58:07     19s] Use setSrouteMode -corePinReferenceMacro <standard cell> to specify a reference macro for followpin connection, or run globalNetConnect command or change CPF file to make sure that the netlist reflects the correct power ground connections. The standard cell pins must be defined as "USE POWER" or "USE GROUND".
+[05/08 19:58:07     19s] **WARN: (IMPSR-468):	Cannot find any standard cell pin connected to net vss!.
+[05/08 19:58:07     19s] Use setSrouteMode -corePinReferenceMacro <standard cell> to specify a reference macro for followpin connection, or run globalNetConnect command or change CPF file to make sure that the netlist reflects the correct power ground connections. The standard cell pins must be defined as "USE POWER" or "USE GROUND".
+[05/08 19:58:07     19s] **WARN: (IMPSR-468):	Cannot find any standard cell pin connected to net vdd!.
+[05/08 19:58:07     19s] Use setSrouteMode -corePinReferenceMacro <standard cell> to specify a reference macro for followpin connection, or run globalNetConnect command or change CPF file to make sure that the netlist reflects the correct power ground connections. The standard cell pins must be defined as "USE POWER" or "USE GROUND".
+[05/08 19:58:07     19s] **WARN: (IMPSR-468):	Cannot find any standard cell pin connected to net vdd!.
+[05/08 19:58:07     19s] Use setSrouteMode -corePinReferenceMacro <standard cell> to specify a reference macro for followpin connection, or run globalNetConnect command or change CPF file to make sure that the netlist reflects the correct power ground connections. The standard cell pins must be defined as "USE POWER" or "USE GROUND".
+[05/08 19:58:07     19s] CPU time for FollowPin 0 seconds
+[05/08 19:58:07     19s] **WARN: (IMPSR-468):	Cannot find any standard cell pin connected to net vss!.
+[05/08 19:58:07     19s] Use setSrouteMode -corePinReferenceMacro <standard cell> to specify a reference macro for followpin connection, or run globalNetConnect command or change CPF file to make sure that the netlist reflects the correct power ground connections. The standard cell pins must be defined as "USE POWER" or "USE GROUND".
+[05/08 19:58:07     19s] **WARN: (IMPSR-468):	Cannot find any standard cell pin connected to net vss!.
+[05/08 19:58:07     19s] Use setSrouteMode -corePinReferenceMacro <standard cell> to specify a reference macro for followpin connection, or run globalNetConnect command or change CPF file to make sure that the netlist reflects the correct power ground connections. The standard cell pins must be defined as "USE POWER" or "USE GROUND".
+[05/08 19:58:07     19s] CPU time for FollowPin 0 seconds
+[05/08 19:58:07     19s]   Number of IO ports routed: 0
+[05/08 19:58:07     19s]   Number of Block ports routed: 0
+[05/08 19:58:07     19s]   Number of Stripe ports routed: 0
+[05/08 19:58:07     19s]   Number of Core ports routed: 24
+[05/08 19:58:07     19s]   Number of Pad ports routed: 0
+[05/08 19:58:07     19s]   Number of Power Bump ports routed: 0
+[05/08 19:58:07     19s]   Number of Followpin connections: 12
+[05/08 19:58:07     19s] End power routing: cpu: 0:00:01, real: 0:00:00, peak: 2377.00 megs.
+[05/08 19:58:07     19s] 
+[05/08 19:58:07     19s] 
+[05/08 19:58:07     19s] 
+[05/08 19:58:07     19s]  Begin updating DB with routing results ...
+[05/08 19:58:07     19s]  Updating DB with 8 via definition ...Extracting standard cell pins and blockage ...... 
+[05/08 19:58:07     19s] Pin and blockage extraction finished
+[05/08 19:58:07     19s] 
+[05/08 19:58:07     19s] 
+sroute post-processing starts at Sun May  8 19:58:07 2022
+The viaGen is rebuilding shadow vias for net vdd!.
+[05/08 19:58:07     19s] sroute post-processing ends at Sun May  8 19:58:07 2022
+sroute created 42 wires.
+[05/08 19:58:07     19s] ViaGen created 92 vias, deleted 0 via to avoid violation.
+[05/08 19:58:07     19s] +--------+----------------+----------------+
+[05/08 19:58:07     19s] |  Layer |     Created    |     Deleted    |
+[05/08 19:58:07     19s] +--------+----------------+----------------+
+[05/08 19:58:07     19s] |   M1   |       40       |       NA       |
+[05/08 19:58:07     19s] |   V1   |       14       |        0       |
+[05/08 19:58:07     19s] |   M2   |        2       |       NA       |
+[05/08 19:58:07     19s] |   V2   |       14       |        0       |
+[05/08 19:58:07     19s] |   V3   |       14       |        0       |
+[05/08 19:58:07     19s] |   WT   |       14       |        0       |
+[05/08 19:58:07     19s] |   WA   |       14       |        0       |
+[05/08 19:58:07     19s] |   WB   |       14       |        0       |
+[05/08 19:58:07     19s] |   VV   |        8       |        0       |
+[05/08 19:58:07     19s] +--------+----------------+----------------+
+[05/08 19:58:07     19s] #% End sroute (date=05/08 19:58:07, total cpu=0:00:00.8, real=0:00:01.0, peak res=1240.7M, current mem=1227.0M)
+[05/08 19:58:14     19s] <CMD> fit
+[05/08 19:58:25     20s] 
+[05/08 19:58:25     20s] *** Memory Usage v#1 (Current mem = 1223.199M, initial mem = 298.191M) ***
+[05/08 19:58:25     20s] 
+[05/08 19:58:25     20s] *** Summary of all messages that are not suppressed in this session:
+[05/08 19:58:25     20s] Severity  ID               Count  Summary                                  
+[05/08 19:58:25     20s] WARNING   IMPLF-200            1  Pin '%s' in macro '%s' has no ANTENNAGAT...
+[05/08 19:58:25     20s] WARNING   IMPFP-325            1  Floorplan of the design is resized. All ...
+[05/08 19:58:25     20s] WARNING   IMPEXT-2766          8  The sheet resistance for layer %s is not...
+[05/08 19:58:25     20s] WARNING   IMPEXT-2773          8  The via resistance between layers %s and...
+[05/08 19:58:25     20s] WARNING   IMPPP-4022           3  Option "-%s" is obsolete and has been re...
+[05/08 19:58:25     20s] WARNING   IMPSR-468            8  Cannot find any standard cell pin connec...
+[05/08 19:58:25     20s] WARNING   IMPSR-1253           2  Unable to find any standard cell pin con...
+[05/08 19:58:25     20s] WARNING   IMPSR-1254           2  Unable to connect the specified objects,...
+[05/08 19:58:25     20s] WARNING   IMPSR-1256           2  Unable to find any CORE class pad pin of...
+[05/08 19:58:25     20s] WARNING   TCLCMD-1013          1  The SDC set_operating_conditions asserti...
+[05/08 19:58:25     20s] WARNING   TCLCMD-1461          1  Skipped unsupported command: %s          
+[05/08 19:58:25     20s] WARNING   TECHLIB-302         35  No function defined for cell '%s'. The c...
+[05/08 19:58:25     20s] *** Message Summary: 72 warning(s), 0 error(s)
+[05/08 19:58:25     20s] 
+[05/08 19:58:25     20s] --- Ending "Innovus" (totcpu=0:00:20.8, real=0:01:23, mem=1223.2M) ---

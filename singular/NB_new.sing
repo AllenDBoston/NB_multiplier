@@ -1,0 +1,111 @@
+// This is a comment
+
+// This is a Boolean ring, variable x, i.e. F_2 = Z (mod 2)
+// ring r = 2, x, lp;
+// lp = order the monomials lexicographically
+
+
+// This is how you describe galois extension fields F_{2^k}
+ring r = (2, A), x, lp;
+// (2, A) = 2 is the characteristic of the field
+// A = is your alpha, root of the irreducible polynomial
+
+int i;
+// minimal polynomial of alpha
+// = irreducible polynomial to construct a field
+// the one below happens to be a primitive polynomial
+//minpoly = A^4 + A^3 + 1;
+//minpoly = A^4 + A+ 1;
+minpoly = A^5 + A^2 + 1;
+
+
+poly B=A^5;
+
+
+poly f1=A^4+1;
+poly g1=A^4+1;
+poly h1=f1*g1;
+
+poly f2=A^4+A^3+A^2;
+poly g2=A+1;
+poly h2=f2*g2;
+
+poly f3=A^4+A^3+A+1;
+poly g3=A^4+A^2;
+poly h3=f3*g3;
+
+
+poly k1=B^2;
+poly m1=B^2;
+poly n1=k1*m1;
+
+poly k2=B^16+B^8+B;
+poly m2=B^16;
+poly n2=k2*m2;
+
+poly k3=B^16+B^4+B^2+B;
+poly m3=B^2+B;
+poly n3=k3*m3;
+
+"=============================";
+"Multiply with Standard Basis";
+"=============================";
+"A(SB):";
+f1;
+"B(SB):";
+g1;
+"Output:";
+h1;  
+
+"==============================";
+
+"A(SB):";
+f2;
+"B(SB):";
+g2;
+"Output:";
+h2;
+
+"=============================";
+"A(SB):";
+f3;
+"B(SB):";
+g3;
+"Output:";
+h3;
+"=============================";
+"=============================";
+
+"Multiply with Normal Basis";
+
+"================================";
+"A(NB):";
+k1;
+"B(NB):";
+m1;
+"Output:";
+n1;
+
+"This is 00100 in NB";
+"=================================";
+
+"A(NB):";
+k2;
+"B(NB):";
+m2;
+"Output:";
+n2;
+
+"This is 11111 in NB";
+"=====================================";
+
+"A(NB):";
+k3;
+"B(NB):";
+m3;
+"Output:";
+n3;
+
+"This is 10101 in NB";
+"=======================================";
+

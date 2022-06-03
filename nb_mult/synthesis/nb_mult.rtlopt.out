@@ -1,0 +1,473 @@
+Using setup-synopsys from S17
+Assuming your OS is amd64
+You are now set up to run the synopsys tools.
+
+Working directory is /research/ece/lnis/USERS/boston/CryptoHW/NB_multiplier/nb_mult/synthesis
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+               Version M-2016.12-SP3 for linux64 - Apr 18, 2017 
+
+                    Copyright (c) 1988 - 2017 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+### This is the script for optimizing the verilog
+#----------------------------------------------------------------------#
+#                        DESIGN DEFINITION                             #
+#----------------------------------------------------------------------#
+set design_name  nb_mult
+nb_mult
+set design_dir   "./../rtl"
+./../rtl
+### EDIT $design_name.cstr.tcl for timing and other constraints!
+############## technology files #########################
+### can include multiple .db files in string.
+### Utah
+#set lib_name  "UofU_Digital_v1_2"
+#set lib_db    "UofU_Digital_v1_2.db"
+#set lib_dir   "/uusoc/facility/cad_common/local/Cadence/lib/UofU_Digital_v1_2/"
+### set lib_pdb   physical db defs
+## UWashington 130nm:
+#set lib_name  "static184cg_1.5V_25C"
+#set lib_db    "static184cg_1.5V_25C.db"
+#set lib_dir   "/uusoc/facility/cad_common/local/Cadence/lib/cg_lib13_v096/"
+##set lib_pdb   physical db defs
+## Artisan 130nm:
+#set lib_name  "typical"
+#set lib_db    "typical.db"
+#set lib_dir   "/uusoc/facility/cad_common/IBM/Artisan/8RF-1.2v/aci/sc-x/synopsys/"
+#set lib_pdb   "bm13svt_8lm_2thick_3rf.pdb"
+## Artisan 65nm:
+set lib_name  "scadv12_cmos10sf_rvt_tt_1p0v_25c"
+scadv12_cmos10sf_rvt_tt_1p0v_25c
+set lib_db    "scadv12_cmos10sf_rvt_tt_1p0v_25c.db"
+scadv12_cmos10sf_rvt_tt_1p0v_25c.db
+set lib_dir   "/uusoc/facility/cad_common/Artisan/GF/cmos65g/aci/sc-adv12/synopsys"
+/uusoc/facility/cad_common/Artisan/GF/cmos65g/aci/sc-adv12/synopsys
+##set lib_pdb
+############# custom library files #############################
+#set custom_cells ../lib/custom-cells.v
+#set custom_seq   ../lib/custom-sequentials.v
+################################################
+#            DC configuration variables
+# Milkyway related variables
+set mw_design_library $design_name.mw
+nb_mult.mw
+#set mw_power_net   VDD
+#set mw_ground_net  VSS
+set mw_logic1_net  VDD
+VDD
+set mw_logic0_net  VSS
+VSS
+set mw_power_port  VDD
+VDD
+set mw_ground_port VSS
+VSS
+# db and cache configuration
+set cache_read  {}
+set cache_write {}
+set allow_newer_db_files       true
+true
+set write_compressed_db_files  true
+true
+set sh_source_uses_search_path true
+true
+#################################################
+# Define checkpoint function
+proc checkpoint {name} {
+  echo "CPU-$name: [cputime -self -child]"
+  echo "MEM-$name: [mem]"
+  echo "CLK-$name: [clock seconds]"
+}
+#----------------------------------------------------------------------#
+#                             DESIGN SETUP                             #
+#----------------------------------------------------------------------#
+set search_path [concat  . $design_dir $lib_dir $search_path]
+. ./../rtl /uusoc/facility/cad_common/Artisan/GF/cmos65g/aci/sc-adv12/synopsys . /uusoc/facility/cad_common/Synopsys/SYN-S17/libraries/syn /uusoc/facility/cad_common/Synopsys/SYN-S17/minpower/syn /uusoc/facility/cad_common/Synopsys/SYN-S17/dw/syn_ver /uusoc/facility/cad_common/Synopsys/SYN-S17/dw/sim_ver
+set search_path "$search_path ${synopsys_root}/libraries/syn"
+. ./../rtl /uusoc/facility/cad_common/Artisan/GF/cmos65g/aci/sc-adv12/synopsys . /uusoc/facility/cad_common/Synopsys/SYN-S17/libraries/syn /uusoc/facility/cad_common/Synopsys/SYN-S17/minpower/syn /uusoc/facility/cad_common/Synopsys/SYN-S17/dw/syn_ver /uusoc/facility/cad_common/Synopsys/SYN-S17/dw/sim_ver /uusoc/facility/cad_common/Synopsys/SYN-S17/libraries/syn
+set search_path "$search_path ${synopsys_root}/dw/sim_ver"
+. ./../rtl /uusoc/facility/cad_common/Artisan/GF/cmos65g/aci/sc-adv12/synopsys . /uusoc/facility/cad_common/Synopsys/SYN-S17/libraries/syn /uusoc/facility/cad_common/Synopsys/SYN-S17/minpower/syn /uusoc/facility/cad_common/Synopsys/SYN-S17/dw/syn_ver /uusoc/facility/cad_common/Synopsys/SYN-S17/dw/sim_ver /uusoc/facility/cad_common/Synopsys/SYN-S17/libraries/syn /uusoc/facility/cad_common/Synopsys/SYN-S17/dw/sim_ver
+################################################################
+# DC library definitions
+set local_link_library [list ]
+set target_library $lib_db
+scadv12_cmos10sf_rvt_tt_1p0v_25c.db
+set synthetic_library "dw_foundation.sldb"
+dw_foundation.sldb
+set link_library [concat * $lib_db $synthetic_library]
+* scadv12_cmos10sf_rvt_tt_1p0v_25c.db dw_foundation.sldb
+if [info exists lib_pdb] {
+    set physical_library $lib_pdb
+} else {
+    set physical_library [list ]
+}
+set symbol_library [list ]
+################################################################
+if [info exists dc_shell_mode] {
+    set suppress_errors "$suppress_errors TRANS-1 TIM-111 TIM-164 OPT-109 UID-101 TIM-134 DDB-74"
+}
+ TRANS-1 TIM-111 TIM-164 OPT-109 UID-101 TIM-134 DDB-74
+checkpoint setup
+CPU-setup: 1
+MEM-setup: 49912
+CLK-setup: 1652061239
+#----------------------------------------------------------------------#
+#                        READ VERILOG NETLIST                          #
+#----------------------------------------------------------------------#
+read_verilog -rtl $design_name.v
+Loading db file '/uusoc/facility/cad_common/Artisan/GF/cmos65g/aci/sc-adv12/synopsys/scadv12_cmos10sf_rvt_tt_1p0v_25c.db'
+Loading db file '/uusoc/facility/cad_common/Synopsys/SYN-S17/libraries/syn/dw_foundation.sldb'
+Loading db file '/uusoc/facility/cad_common/Synopsys/SYN-S17/libraries/syn/gtech.db'
+Loading db file '/uusoc/facility/cad_common/Synopsys/SYN-S17/libraries/syn/standard.sldb'
+  Loading link library 'scadv12_cmos10sf_rvt_tt_1p0v_25c'
+  Loading link library 'gtech'
+Loading verilog file '/research/ece/lnis/USERS/boston/CryptoHW/NB_multiplier/nb_mult/rtl/nb_mult.v'
+Running PRESTO HDLC
+Compiling source file /research/ece/lnis/USERS/boston/CryptoHW/NB_multiplier/nb_mult/rtl/nb_mult.v
+
+Statistics for case statements in always block at line 56 in file
+	'/research/ece/lnis/USERS/boston/CryptoHW/NB_multiplier/nb_mult/rtl/nb_mult.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            58            |     no/auto      |
+===============================================
+
+Statistics for case statements in always block at line 68 in file
+	'/research/ece/lnis/USERS/boston/CryptoHW/NB_multiplier/nb_mult/rtl/nb_mult.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            70            |     no/auto      |
+===============================================
+
+Statistics for case statements in always block at line 105 in file
+	'/research/ece/lnis/USERS/boston/CryptoHW/NB_multiplier/nb_mult/rtl/nb_mult.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           107            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine nb_mult line 48 in file
+		'/research/ece/lnis/USERS/boston/CryptoHW/NB_multiplier/nb_mult/rtl/nb_mult.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine nb_mult line 56 in file
+		'/research/ece/lnis/USERS/boston/CryptoHW/NB_multiplier/nb_mult/rtl/nb_mult.v'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|   next_state_reg    | Latch |   3   |  Y  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+
+Inferred memory devices in process
+	in routine nb_mult line 68 in file
+		'/research/ece/lnis/USERS/boston/CryptoHW/NB_multiplier/nb_mult/rtl/nb_mult.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        a_reg        | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|        b_reg        | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine nb_mult line 105 in file
+		'/research/ece/lnis/USERS/boston/CryptoHW/NB_multiplier/nb_mult/rtl/nb_mult.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/research/ece/lnis/USERS/boston/CryptoHW/NB_multiplier/nb_mult/rtl/nb_mult.db:nb_mult'
+Loaded 2 designs.
+Current design is 'nb_mult'.
+nb_mult nb_comb
+## Read custom library cells if any
+if [info exists custom_cells] {
+    read_verilog -rtl $custom_cells
+}
+if [info exists custom_seq] {
+    read_verilog -rtl $custom_seq
+}
+# read in the design constraints
+source $design_name.cstr.tcl
+Current design is 'nb_mult'.
+Using operating conditions 'tt_1p0v_25c' found in library 'scadv12_cmos10sf_rvt_tt_1p0v_25c'.
+## analyze and elaborate only necessary for VHDL:
+## use something like this:
+#analyze -format vhdl -lib WORK [ list $design_name.v $custom_cells ]
+#elaborate $design_name -lib WORK -update
+#uniquify
+checkpoint read
+CPU-read: 2
+MEM-read: 218288
+CLK-read: 1652061240
+# current_design $design_name
+# set_attribute event_delay_buf size_only true
+report_attribute
+ 
+****************************************
+Report : Attribute
+Design : nb_mult
+Version: M-2016.12-SP3
+Date   : Sun May  8 19:54:00 2022
+****************************************
+
+Design          Object             Type      Attribute Name            Value
+--------------------------------------------------------------------------------
+nb_mult         nb_mult            design    max_fanout                64.000000
+nb_mult         nb_mult            design    wire_load_model_mode      segmented
+nb_mult         nb_mult            design    temperature_from_min_lib  25.000000
+nb_mult         nb_mult            design    temperature_from_max_lib  25.000000
+nb_mult         nb_mult            design    design_voltage_unit       1000.000000
+nb_mult         nb_mult            design    design_current_unit       1.000000
+nb_mult         nb_mult            design    design_power_unit         0.001000
+nb_mult         nb_mult            design    design_resistance_unit    1.000000
+nb_mult         nb_mult            design    design_cap_unit           1.000000
+nb_mult         nb_mult            design    design_time_unit          1.000000
+nb_mult         nb_mult            design    scan_state_route_serial   false
+nb_mult         nb_mult            design    scan_state_route_clocks   false
+nb_mult         nb_mult            design    scan_state_route_enables  false
+nb_mult         nb_mult            design    scan_state_type           1
+nb_mult         nb_mult            design    min_wire_load_selection_type
+                                                                       0
+nb_mult         nb_mult            design    wire_load_selection_type  1
+nb_mult         nb_mult            design    hdl_library               WORK
+nb_mult         nb_mult            design    hdl_template              nb_mult
+nb_mult         nb_mult            design    hdl_canonical_default_params
+nb_mult         nb_mult            design    hdl_default_parameters    
+nb_mult         nb_mult            design    hdl_canonical_params      
+nb_mult         nb_mult            design    hdl_parameters            
+nb_mult         nb_mult            design    link_design_libraries     WORK
+nb_mult         nb_mult            design    presto_gtech_count        362
+nb_mult         C185               cell      dbl_keep                  false
+nb_mult         C186               cell      dbl_keep                  false
+nb_mult         C187               cell      dbl_keep                  false
+nb_mult         C188               cell      dbl_keep                  false
+nb_mult         C189               cell      dbl_keep                  false
+nb_mult         C190               cell      dbl_keep                  false
+nb_mult         C191               cell      dbl_keep                  false
+nb_mult         C192               cell      dbl_keep                  false
+nb_mult         a_reg[0]           cell      is_a_generic_seq          true
+nb_mult         a_reg[0]           cell      ff_edge_sense             1
+nb_mult         a_reg[0]           cell      reg_group_name            a_reg
+nb_mult         a_reg[0]           cell      member_order              0
+nb_mult         a_reg[1]           cell      is_a_generic_seq          true
+nb_mult         a_reg[1]           cell      ff_edge_sense             1
+nb_mult         a_reg[1]           cell      reg_group_name            a_reg
+nb_mult         a_reg[1]           cell      member_order              1
+nb_mult         a_reg[2]           cell      is_a_generic_seq          true
+nb_mult         a_reg[2]           cell      ff_edge_sense             1
+nb_mult         a_reg[2]           cell      reg_group_name            a_reg
+nb_mult         a_reg[2]           cell      member_order              2
+nb_mult         a_reg[3]           cell      is_a_generic_seq          true
+nb_mult         a_reg[3]           cell      ff_edge_sense             1
+nb_mult         a_reg[3]           cell      reg_group_name            a_reg
+nb_mult         a_reg[3]           cell      member_order              3
+nb_mult         a_reg[4]           cell      is_a_generic_seq          true
+nb_mult         a_reg[4]           cell      ff_edge_sense             1
+nb_mult         a_reg[4]           cell      reg_group_name            a_reg
+nb_mult         a_reg[4]           cell      member_order              4
+nb_mult         b_reg[0]           cell      is_a_generic_seq          true
+nb_mult         b_reg[0]           cell      ff_edge_sense             1
+nb_mult         b_reg[0]           cell      reg_group_name            b_reg
+nb_mult         b_reg[0]           cell      member_order              0
+nb_mult         b_reg[1]           cell      is_a_generic_seq          true
+nb_mult         b_reg[1]           cell      ff_edge_sense             1
+nb_mult         b_reg[1]           cell      reg_group_name            b_reg
+nb_mult         b_reg[1]           cell      member_order              1
+nb_mult         b_reg[2]           cell      is_a_generic_seq          true
+nb_mult         b_reg[2]           cell      ff_edge_sense             1
+nb_mult         b_reg[2]           cell      reg_group_name            b_reg
+nb_mult         b_reg[2]           cell      member_order              2
+nb_mult         b_reg[3]           cell      is_a_generic_seq          true
+nb_mult         b_reg[3]           cell      ff_edge_sense             1
+nb_mult         b_reg[3]           cell      reg_group_name            b_reg
+nb_mult         b_reg[3]           cell      member_order              3
+nb_mult         b_reg[4]           cell      is_a_generic_seq          true
+nb_mult         b_reg[4]           cell      ff_edge_sense             1
+nb_mult         b_reg[4]           cell      reg_group_name            b_reg
+nb_mult         b_reg[4]           cell      member_order              4
+nb_mult         nb                 cell      array_ref                 0
+nb_mult         next_state_reg[0]  cell      is_a_generic_seq          true
+nb_mult         next_state_reg[0]  cell      reg_group_name            next_state_reg
+nb_mult         next_state_reg[0]  cell      member_order              0
+nb_mult         next_state_reg[1]  cell      is_a_generic_seq          true
+nb_mult         next_state_reg[1]  cell      reg_group_name            next_state_reg
+nb_mult         next_state_reg[1]  cell      member_order              1
+nb_mult         next_state_reg[2]  cell      is_a_generic_seq          true
+nb_mult         next_state_reg[2]  cell      reg_group_name            next_state_reg
+nb_mult         next_state_reg[2]  cell      member_order              2
+nb_mult         state_reg[0]       cell      is_a_generic_seq          true
+nb_mult         state_reg[0]       cell      ff_edge_sense             1
+nb_mult         state_reg[0]       cell      reg_group_name            state_reg
+nb_mult         state_reg[0]       cell      member_order              0
+nb_mult         state_reg[1]       cell      is_a_generic_seq          true
+nb_mult         state_reg[1]       cell      ff_edge_sense             1
+nb_mult         state_reg[1]       cell      reg_group_name            state_reg
+nb_mult         state_reg[1]       cell      member_order              1
+nb_mult         state_reg[2]       cell      is_a_generic_seq          true
+nb_mult         state_reg[2]       cell      ff_edge_sense             1
+nb_mult         state_reg[2]       cell      reg_group_name            state_reg
+nb_mult         state_reg[2]       cell      member_order              2
+nb_mult         z_reg[0]           cell      is_a_generic_seq          true
+nb_mult         z_reg[0]           cell      ff_edge_sense             0
+nb_mult         z_reg[0]           cell      reg_group_name            z_reg
+nb_mult         z_reg[0]           cell      member_order              0
+nb_mult         z_reg[1]           cell      is_a_generic_seq          true
+nb_mult         z_reg[1]           cell      ff_edge_sense             0
+nb_mult         z_reg[1]           cell      reg_group_name            z_reg
+nb_mult         z_reg[1]           cell      member_order              1
+nb_mult         z_reg[2]           cell      is_a_generic_seq          true
+nb_mult         z_reg[2]           cell      ff_edge_sense             0
+nb_mult         z_reg[2]           cell      reg_group_name            z_reg
+nb_mult         z_reg[2]           cell      member_order              2
+nb_mult         z_reg[3]           cell      is_a_generic_seq          true
+nb_mult         z_reg[3]           cell      ff_edge_sense             0
+nb_mult         z_reg[3]           cell      reg_group_name            z_reg
+nb_mult         z_reg[3]           cell      member_order              3
+nb_mult         z_reg[4]           cell      is_a_generic_seq          true
+nb_mult         z_reg[4]           cell      ff_edge_sense             0
+nb_mult         z_reg[4]           cell      reg_group_name            z_reg
+nb_mult         z_reg[4]           cell      member_order              4
+nb_mult         A[0]               net       net_original_name         A[0]
+nb_mult         A[1]               net       net_original_name         A[1]
+nb_mult         A[2]               net       net_original_name         A[2]
+nb_mult         A[3]               net       net_original_name         A[3]
+nb_mult         A[4]               net       net_original_name         A[4]
+nb_mult         B[0]               net       net_original_name         B[0]
+nb_mult         B[1]               net       net_original_name         B[1]
+nb_mult         B[2]               net       net_original_name         B[2]
+nb_mult         B[3]               net       net_original_name         B[3]
+nb_mult         B[4]               net       net_original_name         B[4]
+nb_mult         Z[0]               net       net_original_name         Z[0]
+nb_mult         Z[0]               net       net_merge_attr            z[0]
+nb_mult         Z[1]               net       net_original_name         Z[1]
+nb_mult         Z[1]               net       net_merge_attr            z[1]
+nb_mult         Z[2]               net       net_original_name         Z[2]
+nb_mult         Z[2]               net       net_merge_attr            R2 z[2]
+nb_mult         Z[3]               net       net_original_name         Z[3]
+nb_mult         Z[3]               net       net_merge_attr            R3 z[3]
+nb_mult         Z[4]               net       net_original_name         Z[4]
+nb_mult         Z[4]               net       net_merge_attr            R4 z[4]
+nb_mult         a[0]               net       net_original_name         a[0]
+nb_mult         a[0]               net       net_merge_attr            a0
+nb_mult         a[1]               net       net_original_name         a[1]
+nb_mult         a[1]               net       net_merge_attr            a1
+nb_mult         a[2]               net       net_original_name         a[2]
+nb_mult         a[3]               net       net_original_name         a[3]
+nb_mult         a[4]               net       net_original_name         a[4]
+nb_mult         a[4]               net       net_merge_attr            a4
+nb_mult         b[0]               net       net_original_name         b[0]
+nb_mult         b[0]               net       net_merge_attr            b0
+nb_mult         b[1]               net       net_original_name         b[1]
+nb_mult         b[1]               net       net_merge_attr            b1
+nb_mult         b[2]               net       net_original_name         b[2]
+nb_mult         b[3]               net       net_original_name         b[3]
+nb_mult         b[4]               net       net_original_name         b[4]
+nb_mult         b[4]               net       net_merge_attr            b4
+nb_mult         clk                net       net_original_name         clk
+nb_mult         en                 net       net_original_name         en
+nb_mult         next_state[0]      net       net_original_name         next_state[0]
+nb_mult         next_state[1]      net       net_original_name         next_state[1]
+nb_mult         next_state[2]      net       net_original_name         next_state[2]
+nb_mult         r0                 net       net_original_name         r0
+nb_mult         r3                 net       net_original_name         r3
+nb_mult         r4                 net       net_original_name         r4
+nb_mult         state[0]           net       net_original_name         state[0]
+nb_mult         state[1]           net       net_original_name         state[1]
+nb_mult         state[2]           net       net_original_name         state[2]
+nb_mult         nb/R2              net       net_original_name         R2
+nb_mult         nb/R3              net       net_original_name         R3
+nb_mult         nb/R4              net       net_original_name         R4
+nb_mult         nb/a0              net       net_original_name         a0
+nb_mult         nb/a1              net       net_original_name         a1
+nb_mult         nb/a4              net       net_original_name         a4
+nb_mult         nb/b0              net       net_original_name         b0
+nb_mult         nb/b1              net       net_original_name         b1
+nb_mult         nb/b4              net       net_original_name         b4
+nb_mult         nb/c1              net       net_original_name         c1
+nb_mult         nb/c2              net       net_original_name         c2
+nb_mult         nb/c3              net       net_original_name         c3
+nb_mult         nb/c4              net       net_original_name         c4
+nb_mult         nb/d0              net       net_original_name         d0
+nb_mult         nb/d1              net       net_original_name         d1
+nb_mult         nb/d2              net       net_original_name         d2
+nb_mult         nb/d2              net       net_merge_attr            e4
+nb_mult         nb/e0              net       net_original_name         e0
+nb_mult         nb/e3              net       net_original_name         e3
+nb_mult         nb/r0              net       net_original_name         r0
+nb_mult         nb/r3              net       net_original_name         r3
+nb_mult         nb/r4              net       net_original_name         r4
+nb_mult         Z[0]               port      load                      0.009269
+nb_mult         Z[1]               port      load                      0.009269
+nb_mult         Z[2]               port      load                      0.009269
+nb_mult         Z[3]               port      load                      0.009269
+nb_mult         Z[4]               port      load                      0.009269
+nb_mult         clk                port      dont_touch_network        true
+nb_mult         *SELECT_OP_2.3_2.1_3
+                                   reference canonical_name            SELECT_OP_2_2_1
+nb_mult         *SELECT_OP_7.1_7.1_1
+                                   reference canonical_name            SELECT_OP_7_7_1
+nb_mult         *SELECT_OP_6.3_6.1_3
+                                   reference canonical_name            SELECT_OP_6_6_1
+nb_mult         *SELECT_OP_6.5_6.1_5
+                                   reference canonical_name            SELECT_OP_6_6_1
+
+1
+#----------------------------------------------------------------------#
+#                                 WRITE                                #
+#----------------------------------------------------------------------#
+current_design $design_name
+Current design is 'nb_mult'.
+{nb_mult}
+link
+
+  Linking design 'nb_mult'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (2 designs)               /research/ece/lnis/USERS/boston/CryptoHW/NB_multiplier/nb_mult/rtl/nb_mult.db, etc
+  scadv12_cmos10sf_rvt_tt_1p0v_25c (library)
+                              /uusoc/facility/cad_common/Artisan/GF/cmos65g/aci/sc-adv12/synopsys/scadv12_cmos10sf_rvt_tt_1p0v_25c.db
+  dw_foundation.sldb (library)
+                              /uusoc/facility/cad_common/Synopsys/SYN-S17/libraries/syn/dw_foundation.sldb
+
+1
+write_sdc $design_name.rtlopt.sdc
+1
+write -format ddc -hierarchy -output $design_name.rtlopt.ddc
+Writing ddc file 'nb_mult.rtlopt.ddc'.
+1
+write -format verilog -hierarchy -output $design_name.rtlopt.v
+Writing verilog file '/research/ece/lnis/USERS/boston/CryptoHW/NB_multiplier/nb_mult/synthesis/nb_mult.rtlopt.v'.
+Warning: Module nb_mult contains unmapped components.  The output netlist might not be read back into the system. (VO-12)
+1
+checkpoint write
+CPU-write: 2
+MEM-write: 218288
+CLK-write: 1652061240
+exit
+
+Thank you...
